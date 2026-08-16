@@ -38,9 +38,9 @@ licensing reasons: download it and place it at `_recursos/SentiLex-flex-PT02.txt
 | `reproduzir_baselines_lexicos.py` | re-runs the lexicon baselines over the full corpus, as a check | `baseline_lexico.json`, `baseline_sentilexpt.json` | seconds |
 | `estudo_caso_ordenacao.py` | trains the BERTimbau ensemble (5 folds) and applies it to 40 videos from 4 real searches, comparing the produced order against the order returned by the platform | `estudo_caso_ordenacao.json`, `predicoes_teste.npz` | **~1h50 on CPU** |
 | `significancia_e_erros.py` | McNemar and paired bootstrap against the baselines, on the same split; extracts the model's errors | `significancia.json`, `erros_taxonomia.json` and the tables `tab-significancia.tex`, `tab-teste.tex`, `tab-baselines.tex` | ~2 min |
-| `erros_categorias.py` | manual categorization of the 72 Positive/Neutral errors, recorded item by item for auditing | `erros_categorias.json` | seconds |
+| `erros_categorias.py` | manual categorization of the 79 Positive/Neutral errors, recorded item by item for auditing | `erros_categorias.json` | seconds |
 | `gerar_matriz_confusao.py` | confusion matrix figure | `figuras/fig02-confusion-matrix.png` | seconds |
-| `avaliar_reranking.py` | evaluates the re-ranking with information retrieval metrics over 29 queries derived from titles, with out-of-fold prediction | `reranking_results.json`, `reranking_curvas.png`, `reranking_tabela.tex` | seconds |
+| `avaliar_reranking.py` | evaluates the re-ranking with information retrieval metrics over 32 queries derived from titles, with out-of-fold prediction | `reranking_results.json`, `reranking_curvas.png`, `reranking_tabela.tex` | seconds |
 | `ablacao_score.py` | ablation of the scoring function: compares the proposed formulation against three alternatives over the **same** predictions | `ablacao_score.json`, `tab-ablacao.tex` | seconds |
 | `gerar_tabelas_estudo_caso.py` | case study tables and figures | `tab-estudo-caso.tex`, `tab-ordem.tex`, two figures | seconds |
 | `versao_en.py` | regenerates the tables and figures with English labels, from the same result files | `*-en.tex`, `figuras/en/` | seconds |
@@ -57,13 +57,13 @@ reproducible at any time and, inside the monorepo, belong to the manuscript.
 
 | Claim | Where to check it |
 |---|---|
-| 2,749 sentences, 251 videos, distribution 868/999/882 | `estatisticas_corpus.py` → `estatisticas_corpus.json` |
-| Fleiss' $\kappa$ = 0.72; 63% unanimous votes | idem |
+| 2,749 sentences, 264 videos, distribution 872/988/889 | `estatisticas_corpus.py` → `estatisticas_corpus.json` |
+| Fleiss' $\kappa$ = 0.7180; 62.5% unanimous votes; 2 items settled by the arbiter | idem |
 | Result tables on the held-out test set and per class | `significancia_e_erros.py`, from `predicoes_teste.npz` |
 | Confusion matrix | `gerar_matriz_confusao.py`, from the same `predicoes_teste.npz` |
 | McNemar and paired bootstrap against the baselines | `significancia_e_erros.py` → `significancia.json` |
-| Taxonomy of the 103 errors; the 72 between Positive and Neutral | `significancia_e_erros.py` → `erros_taxonomia.json`; `erros_categorias.py` → `erros_categorias.json` |
-| nDCG@k, P@k and MAP of the re-ranking, 29 queries | `avaliar_reranking.py` → `reranking_results.json` |
+| Taxonomy of the 119 errors; the 79 between Positive and Neutral | `significancia_e_erros.py` → `erros_taxonomia.json`; `erros_categorias.py` → `erros_categorias.json` |
+| nDCG@k, P@k and MAP of the re-ranking, 32 queries | `avaliar_reranking.py` → `reranking_results.json` |
 | Ablation of the scoring function | `ablacao_score.py` → `ablacao_score.json` |
 | Case study: scores, AUC between strata, change of order | `estudo_caso_ordenacao.py` → `estudo_caso_ordenacao.json` |
 | Baseline reproduction over the full corpus | [`REPRODUCAO.md`](REPRODUCAO.md) |

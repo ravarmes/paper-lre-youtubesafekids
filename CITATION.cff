@@ -2,13 +2,17 @@ cff-version: 1.2.0
 message: "If you use this corpus or this code, please cite the article below."
 title: "YouTube Safe Kids — sentiment analysis: corpus and code"
 abstract: >-
-  Annotated corpus of 2,749 sentences in Brazilian Portuguese, transcribed from 251
+  Annotated corpus of 2,749 sentences in Brazilian Portuguese, transcribed from 264
   public children's YouTube videos and labeled into three polarity classes by four
   annotators; the code that trains and evaluates a BERTimbau classifier, converts the
   prediction into an interpretable safety score and re-ranks search results by that
   score; and the YouTube Safe Kids platform, a web application that applies the score
   to live searches.
 type: dataset
+# Terms differ by component -- see LICENSE. MIT covers the code; the annotation
+# is CC BY 4.0; the transcribed sentences are third-party material quoted for
+# research, over which no licence is granted. CFF admits a single value, so the
+# one naming the code is given here and LICENSE is authoritative.
 license: MIT
 repository-code: "https://github.com/ravarmes/paper-lre-youtubesafekids"
 authors:

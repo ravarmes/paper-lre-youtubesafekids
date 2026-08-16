@@ -43,9 +43,10 @@ article, in the result files and in the code all match.
 | In the article | In the repository |
 |---|---|
 | Equation (1) — single input block (title + description + 3 excerpts) | `plataforma/app/filters/sentiment.py`, `process` method |
-| Equation (2) — Safety Score from predicted class and confidence | `plataforma/app/filters/sentiment.py`, same method |
-| Equation (3) — displayed suitability reading | `plataforma/app/filters/sentiment.py`, `_adequacy` |
+| Equation (2) — displayed suitability reading $A$ | `plataforma/app/filters/sentiment.py`, `_adequacy` |
+| Equation (3) — Safety Score from predicted class, confidence and $A$ | `plataforma/app/filters/sentiment.py`, `process` method |
 | Equation (4) — aggregation of $N$ filters by the mean | `plataforma/app/filters/__init__.py`, `FilterManager.process_video` |
+| Equation (5) — suitability of a video from its human labels (evaluation only) | `experimentos/avaliar_reranking.py` |
 | Section *Prototype architecture* — client/server, filter as score producer | `plataforma/app/main.py`, `plataforma/app/api/endpoints/videos.py`, `plataforma/app/filters/base.py` |
 | Interface figures | `plataforma/app/templates/`, `plataforma/app/static/` |
 | Re-ranking without removal from the listing | `plataforma/app/api/endpoints/videos.py`, the ordering by `final_score` |
@@ -61,7 +62,7 @@ and `experimentos/ablacao_score.py` compares it against three alternative formul
 
 ### `dados/corpus.csv` — annotated corpus
 
-2,749 sentences from 251 children's videos in Brazilian Portuguese, annotated into three
+2,749 sentences from 264 children's videos in Brazilian Portuguese, annotated into three
 polarity classes.
 
 | Column | Content |
@@ -74,14 +75,14 @@ polarity classes.
 | `AS` | **final label**, by majority vote: `Negativo`, `Neutro` or `Positivo` |
 | `P1`, `A1`, `A2`, `A3` | individual labels of the four annotators (`P1` = faculty member, arbiter in case of a tie) |
 
-Distribution: 868 Negative (31.6%), 999 Neutral (36.3%), 882 Positive (32.1%).
-Agreement: Fleiss' $\kappa$ = 0.7218 (*substantial agreement*), 81.5% mean pairwise
-agreement and 63.0% unanimous votes (1,731 of 2,749). Running
+Distribution: 872 Negative (31.7%), 988 Neutral (35.9%), 889 Positive (32.3%).
+Agreement: Fleiss' $\kappa$ = 0.7180 (*substantial agreement*), 81.2% mean pairwise
+agreement and 62.5% unanimous votes (1,718 of 2,749). Running
 `experimentos/estatisticas_corpus.py` recomputes all of this straight from the file.
 
-The four annotators cover all 2,749 sentences, with no gaps. No item produced a 2×2 tie —
-the final label coincides with the simple majority on all 2,749 sentences, so the
-tie-breaking rule through `P1` never had to be invoked.
+The four annotators cover all 2,749 sentences, with no gaps. Exactly 2 sentences (0.1%)
+split the panel 2×2 and were settled by the arbiter; on every other item the final label is
+the simple majority.
 
 `dados/corpus-rubrica.md` is the annotation rubric: it defines the three polarity classes,
 with an example each, and states the unit of judgment. `dados/corpus-rubrica-en.md` is an
@@ -119,53 +120,65 @@ its `app/nlp/config.py` points to `dados/corpus.csv`.
 
 ## Main results
 
-Held-out test set, 544 sentences (20%, stratified), over the 2,722 sentences used for
+Held-out test set, 545 sentences (20%, stratified), over the 2,722 sentences used for
 training and evaluation:
 
 | Method | Accuracy | Macro F1 | F1 Negative |
 |---|---:|---:|---:|
-| SentiLex-PT | 45.22 | 44.08 | 41.8 |
-| TF-IDF + logistic regression | 67.46 | 67.77 | 79.2 |
-| Frozen BERTimbau + LR | 75.74 | 76.11 | 87.9 |
-| **Fine-tuned BERTimbau (*ensemble*)** | **81.07** | **81.50** | **90.7** |
+| SentiLex-PT | 46.24 | 45.86 | 46.9 |
+| TF-IDF + logistic regression | 66.06 | 66.57 | 79.8 |
+| Frozen BERTimbau + LR | 72.11 | 72.26 | 82.5 |
+| **Fine-tuned BERTimbau (*ensemble*)** | **78.17** | **78.53** | **88.0** |
 
-The 90.7% F1 on the Negative class is the critical metric: in a child protection use case,
-letting negative content through is a qualitatively more serious error than deprioritizing
-suitable content.
+The 88.0% F1 on the Negative class (84.9% recall) is the critical metric: in a child
+protection use case, letting negative content through is a qualitatively more serious error
+than deprioritizing suitable content. The decisive comparison is against frozen BERTimbau,
+which shares model, tokenization and representation with the proposed system: the 6.26
+points of macro F1 between them isolate what domain adaptation adds, with a 95% confidence
+interval of [2.91, 9.73] under a paired bootstrap.
 
 Execution details, a suggested order and the full map of which script backs which claim are
 in [`experimentos/README.md`](experimentos/README.md).
 
 ## Safety Score
 
-From the predicted class and the model confidence $C$:
-
-$$S = \begin{cases} 0.1 + 0.2\,(1-C) & \text{if the class is Negative} \\ 0.85 & \text{otherwise} \end{cases}$$
-
-The score answers **risk**, not tone: Neutral and Positive receive the same value, because
-the distinction between them says something about tone and nothing about risk. Only the
-Negative class is demoted, and there confidence grades how far — the more certain the
-model, the lower the score.
-
 The input is a single block concatenating title, description and three transcript excerpts
 (beginning, middle and end), which captures the narrative arc without submitting the whole
-transcript to the model.
-
-Because Equation (2) deliberately stops grading what it does not demote, the interface
-displays a separate, graded suitability reading, computed over the ensemble probabilities:
+transcript to the model. The ensemble returns a distribution over the three classes, and two
+quantities are read from it. The first is the **predicted suitability** $A$:
 
 $$A = P(\text{Positive}) + 0.5 \cdot P(\text{Neutral})$$
 
-Three readings, three roles: the **position** in the listing comes from Equation (2) and
+The second is the **Safety Score** $S$, which is what orders the listing. Writing $C$ for the
+confidence of the predicted class:
+
+$$S = \begin{cases} 0.10 + 0.20\,(1-C) & \text{if the class is Negative} \\ 0.70 + 0.15\,A & \text{otherwise} \end{cases}$$
+
+The principle is that **risk dominates tone**. The image is two disjoint bands — $[0.10,
+0.233]$ for Negative and $[0.70, 0.85]$ for the rest — and the gap between them, $0.467$, is
+more than three times the $0.15$ over which the upper band varies. Ordering by tone therefore
+operates strictly *within* content that presents no risk, and no distribution of
+probabilities can lift a Negative video above a non-Negative one. That is a property of the
+algebra, not a calibrated tolerance.
+
+Inside the safe band $A$ grades: between two videos that present no risk, the one with
+positive affective charge is placed ahead of the merely informative one. What the formulation
+refuses is not the gradation but its promotion to a risk signal — putting Neutral *between*
+the bands would turn the absence of positive charge into evidence of risk.
+
+Three readings, three roles: the **position** in the listing comes from Equation (3) and
 answers risk; the **color** of the indicator comes from the predicted class and says what
-the item is; the **percentage** displayed is Equation (3) and says how suitable the filter
-considers the video.
+the item is; the **percentage** displayed is Equation (2), the same $A$ that grades the safe
+band — so among non-demoted items the percentages read top to bottom in descending order.
 
 `experimentos/ablacao_score.py` measures what this formulation is worth against the
-alternatives it rejects. Separating Neutral from Positive costs 0.079 of nDCG@3 (0.669
-against 0.748) and rewrites the order in 22 of the 29 queries; a continuous score based on
-the expectation reaches 0.726, below the piecewise function, because the extra granularity
-ends up ordering by tone.
+alternatives it rejects, over the same out-of-fold predictions and the same 32 queries.
+Flattening the safe band to a constant costs 0.037 of nDCG@3 (0.719 against 0.755) and leaves
+80 distinct score values where the full formulation produces 263. Placing Neutral as
+intermediate risk costs 0.042 of nDCG@3 and 0.035 of MAP (0.713 and 0.847, against 0.755 and
+0.882). Ordering by the expectation $A$ alone reproduces every metric to the third decimal:
+what the bands buy is a worst-case guarantee, not an average, which is why their justification
+comes from the case study and not from these ranking metrics.
 
 ## Model
 
@@ -180,8 +193,19 @@ minutes per fold.
 
 ## License
 
-MIT — see `LICENSE`, including the reservation about the third-party content in the corpus
-and about the SentiLex-PT lexicon, which is not redistributed here.
+Three components, three terms — see [`LICENSE`](LICENSE) for the binding text.
+
+| Component | Terms |
+|---|---|
+| Code (`plataforma/`, `experimentos/`) and result files | MIT |
+| Annotation: the four independent labels, the final label, the rubric | CC BY 4.0 |
+| Transcribed sentences, video titles and descriptions | third-party material, quoted for research; **no licence granted** |
+
+The split matters and is not a formality: the annotation is the authors' own work and can be
+licensed, whereas the transcribed speech belongs to the video owners and is reproduced only
+to the extent needed to verify the results. The SentiLex-PT lexicon is a third-party resource
+under its own terms and is **not** redistributed here; `experimentos/README.md` records where
+to obtain it.
 
 ## Citation
 

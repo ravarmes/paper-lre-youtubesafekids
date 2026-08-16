@@ -3,12 +3,14 @@
 Re-run of the *baselines* over the **full corpus of 2,749 sentences**, as an independent
 check on the numbers of the conference version of this work.
 
-> **What this document is and is not.** It audits the baselines *as previously published*,
-> over the 80/20 split of the whole corpus. The baselines reported in the current
-> manuscript are different ones: they run on the same 544-sentence split as the ensemble,
-> come out of `significancia_e_erros.py` and live in `significancia.json`. The two sets of
-> numbers are not comparable with each other, which is why the ones on this page do not
-> match those in the README.
+> **What this document is and is not.** It audits the baselines *as published in the
+> conference version*, over an 80/20 split of the whole 2,749-sentence corpus. **None of the
+> numbers on this page appear in the journal manuscript.** The baselines reported there are
+> different ones: they run on the 2,722 sentences that remain after the 27 belonging to
+> case-study videos are removed, over the same 545-sentence test split as the ensemble, and
+> they come out of `significancia_e_erros.py` into `significancia.json`. The two sets are not
+> comparable, which is why the ones on this page do not match the README or the article. For
+> the journal numbers, see the table in the root [`README.md`](../README.md).
 
 ## Environment
 
@@ -35,15 +37,17 @@ python -m venv .venv
 
 ## Inputs
 
-- `corpus.csv` — 2,749 sentences (868 Negative / 999 Neutral / 882 Positive), 251 videos.
+- `corpus.csv` — 2,749 sentences (872 Negative / 988 Neutral / 889 Positive), 264 videos.
 - `_recursos/SentiLex-flex-PT02.txt` — SentiLex-PT, a polarity lexicon for Portuguese
   (6.9 MB), **not redistributed** in this repository: download it from the official
   SentiLex-PT distribution and place it at that path. **70,215 forms** (19,031 positive,
   51,184 negative) after consolidation by `POL:N0`.
 - The `neuralmind/bert-base-portuguese-cased` model, from the local Hugging Face cache.
 
-Split: 80/20 stratified, `random_state=42` → **2,199 train / 550 test**, identical to the
-one used in the article.
+Split: 80/20 stratified, `random_state=42` over the whole corpus → **2,199 train / 550
+test**. This is the split of the conference version, *not* the one used in the journal
+manuscript, which first removes the 27 case-study sentences and then splits 2,722 into
+2,177 / 545.
 
 ## Commands
 
@@ -54,7 +58,7 @@ one used in the article.
 
 ## Result
 
-| Baseline | Metric | Article | Reproduced | Δ |
+| Baseline | Metric | Conference version | Reproduced | Δ |
 |---|---|---:|---:|---:|
 | **SentiLex-PT** | accuracy | 45.45 | **45.45** | **0.00** |
 | | macro F1 | 44.68 | **44.68** | **0.00** |
@@ -83,14 +87,16 @@ originating project, in a baseline script not included here which compares three
 preprocessing variants and records the range **73.82% – 74.73%**. The value obtained here
 (74.36%) falls inside that range.
 
-**Conclusion**: the manuscript's baselines are reproducible. The published numbers were
-kept; the differences in the frozen BERTimbau are environmental, not methodological.
+**Conclusion**: the conference version's baselines are reproducible. Its published numbers
+were kept; the differences in the frozen BERTimbau are environmental, not methodological.
+The journal manuscript re-runs all three baselines on its own split, and those are the
+numbers it reports.
 
 ## A note on the "simple lexicon"
 
 `baselines.py` implements, as baseline 1, a lexicon of positive and negative words of its
-own (the `lexicon_predict` function), which **is not** SentiLex-PT and **is not the
-baseline reported in the article**. Reproduced here, it reaches 43.64% accuracy and 39.48%
+own (the `lexicon_predict` function), which **is not** SentiLex-PT and **is not a baseline
+reported in either version of the article**. Reproduced here, it reaches 43.64% accuracy and 39.48%
 macro F1 — below SentiLex-PT, as expected from a much smaller manual list.
 
 It appears in `baselines_results.json` because the script runs it alongside the others; the
@@ -100,7 +106,7 @@ article's lexicon baseline is the one in `baseline_sentilexpt.json`.
 
 | File | Content |
 |---|---|
-| `baseline_sentilexpt.json` | SentiLex-PT — the article's lexicon baseline |
-| `baseline_lexico.json` | simple lexicon — auxiliary baseline, outside the article |
+| `baseline_sentilexpt.json` | SentiLex-PT — the lexicon baseline, as run here |
+| `baseline_lexico.json` | simple lexicon — auxiliary baseline, in neither version of the article |
 | `baselines_results.json` | simple lexicon, TF-IDF+LR and frozen BERTimbau |
 | `reproduzir_baselines_lexicos.py` | script for the lexicon baselines, adapted from the originating project |

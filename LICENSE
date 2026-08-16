@@ -22,10 +22,25 @@ SOFTWARE.
 
 ---
 
-Note on third-party material. The sentences in `corpus.csv` and the titles,
-descriptions and sentences in `reordenacao_buscas.csv` are transcribed or
-copied from public YouTube videos owned by third parties. They are included
-only to the extent needed to verify the results reported in the paper, and the
-MIT grant above does not extend to that third-party content: it remains with
-its respective owners. The SentiLex-PT lexicon is not redistributed here — see
-REPRODUCAO.md.
+SCOPE OF THIS LICENSE
+
+The MIT grant above covers the CODE and the stored result files only. Two other
+components of this repository carry different terms.
+
+1. The ANNOTATION -- the four independent labels, the final label and the
+   annotation rubric in `dados/corpus-rubrica.md` -- is the authors' own work
+   and is released under the Creative Commons Attribution 4.0 International
+   license (CC BY 4.0), https://creativecommons.org/licenses/by/4.0/.
+
+2. The TRANSCRIBED SENTENCES in `dados/corpus.csv`, and the titles,
+   descriptions and sentences in `dados/reordenacao_buscas.csv`, are
+   transcribed or copied from public YouTube videos owned by third parties.
+   They are reproduced as quotation, only to the extent needed to verify the
+   results reported in the paper. Neither the MIT grant nor the CC BY grant
+   extends to that material: the rights remain with the respective owners, and
+   the source link accompanies every row so provenance can be checked. No
+   video, audio or subtitle file is redistributed.
+
+The SentiLex-PT lexicon used as a baseline is a third-party resource under its
+own terms and is not redistributed here -- see experimentos/README.md for where
+to obtain it.
