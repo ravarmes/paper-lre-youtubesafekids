@@ -1,0 +1,59 @@
+# --- Python -----------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# Ambientes virtuais (o do experimento tem ~3,5 GB) — recriaveis com requirements.txt
+.venv/
+venv/
+env/
+ENV/
+
+# --- Segredos ---------------------------------------------------------------
+# So o exemplo vai para o repositorio; a chave da YouTube Data API fica local.
+.env
+.env.*
+!.env.example
+
+# --- Insumos nao redistribuidos ---------------------------------------------
+# Lexico SentiLex-PT: fora por questao de licenca.
+# Baixar e colocar aqui — ver experimentos/REPRODUCAO.md.
+experimentos/_recursos/
+
+# --- Pesos de modelo (~440 MB por fold), regeneraveis ------------------------
+*.bin
+*.safetensors
+*.h5
+*.ckpt
+*.pth
+*.pt
+*.pkl
+*.joblib
+*.model
+*.weights
+plataforma/app/nlp/models/cache/
+plataforma/app/nlp/models/trained/
+modelo*/
+
+# --- Cache do Hugging Face --------------------------------------------------
+.cache/
+transformers_cache/
+huggingface_hub/
+
+# --- Execucao ---------------------------------------------------------------
+*.log
+plataforma/app/nlp/logs/
+# particoes e recortes que os scripts da plataforma derivam do corpus
+plataforma/data/
+
+# Tabelas e figuras que os scripts regeram nesta copia. Dentro do monorepo do
+# artigo elas vao para ../latex; aqui caem em saidas/ — ver README.
+saidas/
+
+# --- Sistema ----------------------------------------------------------------
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

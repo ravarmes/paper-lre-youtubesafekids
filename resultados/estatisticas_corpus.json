@@ -1,0 +1,26 @@
+{
+  "sentencas": 2749,
+  "videos": 264,
+  "itens_com_quatro_anotadores": 2749,
+  "distribuicao": {
+    "Negativo": {
+      "n": 872,
+      "pct": 31.7
+    },
+    "Neutro": {
+      "n": 988,
+      "pct": 35.9
+    },
+    "Positivo": {
+      "n": 889,
+      "pct": 32.3
+    }
+  },
+  "fleiss_kappa": 0.718,
+  "concordancia_observada": 0.8124,
+  "concordancia_esperada": 0.3345,
+  "concordancia_media_pares_pct": 81.2,
+  "unanimes": 1718,
+  "unanimes_pct": 62.5,
+  "rotulo_final_igual_a_maioria_simples": 2747
+}

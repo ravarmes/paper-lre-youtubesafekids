@@ -1,0 +1,15 @@
+# Ambiente principal: modelos, baselines e estudo de caso.
+# As versoes sao fixadas porque numpy 2.x quebra os binarios de pandas e
+# scikit-learn instalados junto — ver REPRODUCAO.md.
+numpy==1.26.4
+pandas==2.1.3
+scikit-learn==1.3.2
+transformers==4.37.2
+
+# torch CPU, do indice proprio do PyTorch:
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+torch
+
+# matplotlib NAO entra aqui: conflita com o pin de numpy acima. Os scripts que
+# desenham figuras (gerar_tabelas_estudo_caso.py, gerar_matriz_confusao.py,
+# avaliar_reranking.py) rodam no Python do sistema, com matplotlib e numpy livres.

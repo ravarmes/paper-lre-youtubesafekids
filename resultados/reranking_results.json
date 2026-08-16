@@ -1,0 +1,89 @@
+{
+  "protocolo": {
+    "n_videos": 264,
+    "n_sentencas": 2749,
+    "n_folds": 5,
+    "n_consultas": 32,
+    "consultas": {
+      "amiguinhos": 5,
+      "animado": 8,
+      "aprenda": 6,
+      "aprender": 9,
+      "casa": 6,
+      "como": 7,
+      "compilacao": 5,
+      "completos": 5,
+      "criancas": 34,
+      "desenho": 27,
+      "disney": 8,
+      "foram": 12,
+      "forca": 6,
+      "historia": 25,
+      "infantil": 23,
+      "infantis": 6,
+      "kids": 9,
+      "luna": 18,
+      "mais": 5,
+      "melhores": 6,
+      "minutos": 8,
+      "momentos": 5,
+      "park": 15,
+      "peppa": 17,
+      "primeira": 6,
+      "problemas": 13,
+      "show": 21,
+      "simpsons": 34,
+      "south": 17,
+      "subterranea": 5,
+      "super": 6,
+      "vida": 5
+    },
+    "ks": [
+      3,
+      5,
+      10
+    ],
+    "n_permutacoes_aleatorio": 200,
+    "seed": 42,
+    "classificador": "TF-IDF + regressao logistica multinomial (numpy)",
+    "limitacao": "a ordem original devolvida pela plataforma nao esta no corpus; o baseline e a ordenacao aleatoria, nao a do YouTube"
+  },
+  "resultados": {
+    "aleatorio": {
+      "ndcg@3": 0.5924435463496032,
+      "ndcg@5": 0.6767394859657709,
+      "ndcg@10": 0.7376990495902924,
+      "p@3": 0.7164583333333334,
+      "p@5": 0.7152499999999999,
+      "p@10": 0.7172725694444444,
+      "map": 0.7773495121847258
+    },
+    "bloco": {
+      "ndcg@3": 0.7552940544863426,
+      "ndcg@5": 0.822644834004677,
+      "ndcg@10": 0.8477436492377468,
+      "p@3": 0.8229166666666666,
+      "p@5": 0.7749999999999999,
+      "p@10": 0.7381944444444444,
+      "map": 0.8818000399280583
+    },
+    "sentenca": {
+      "ndcg@3": 0.6936361825026859,
+      "ndcg@5": 0.7863588119669076,
+      "ndcg@10": 0.8150838246375559,
+      "p@3": 0.78125,
+      "p@5": 0.7625,
+      "p@10": 0.7194444444444444,
+      "map": 0.8884126240983093
+    },
+    "oraculo": {
+      "ndcg@3": 1.0,
+      "ndcg@5": 1.0,
+      "ndcg@10": 1.0,
+      "p@3": 0.9166666666666666,
+      "p@5": 0.81875,
+      "p@10": 0.7569444444444444,
+      "map": 1.0
+    }
+  }
+}

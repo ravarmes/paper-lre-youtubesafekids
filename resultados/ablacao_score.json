@@ -1,0 +1,90 @@
+{
+  "n_desempates": 200,
+  "variantes": {
+    "proposta": {
+      "rotulo": "Eq. (2), como proposta",
+      "metricas": {
+        "ndcg@3": 0.7552940544863427,
+        "ndcg@10": 0.847743649237747,
+        "p@3": 0.8229166666666665,
+        "map": 0.8818000399280583
+      },
+      "desvio_desempate": {
+        "ndcg@3": 0.0,
+        "ndcg@10": 2.220446049250313e-16,
+        "p@3": 1.1102230246251565e-16,
+        "map": 0.0
+      },
+      "n_valores_distintos": 263,
+      "n_videos": 264
+    },
+    "plato_constante": {
+      "rotulo": "Faixa segura sem gradação por tom",
+      "metricas": {
+        "ndcg@3": 0.7185479782508841,
+        "ndcg@10": 0.8286257464164005,
+        "p@3": 0.8024479166666666,
+        "map": 0.8828398685098438
+      },
+      "desvio_desempate": {
+        "ndcg@3": 0.028147946214778414,
+        "ndcg@10": 0.01701649246387354,
+        "p@3": 0.01904790823580695,
+        "map": 0.016300931728234422
+      },
+      "n_valores_distintos": 80,
+      "n_videos": 264
+    },
+    "sem_confianca": {
+      "rotulo": "Faixa negativa sem o termo de confiança",
+      "metricas": {
+        "ndcg@3": 0.7552940544863427,
+        "ndcg@10": 0.8470854295216457,
+        "p@3": 0.8229166666666665,
+        "map": 0.8801003871502806
+      },
+      "desvio_desempate": {
+        "ndcg@3": 0.0,
+        "ndcg@10": 0.00043873968701113944,
+        "p@3": 1.1102230246251565e-16,
+        "map": 0.0010639032808353566
+      },
+      "n_valores_distintos": 185,
+      "n_videos": 264
+    },
+    "neutro_intermediario": {
+      "rotulo": "Neutro como risco intermediário",
+      "metricas": {
+        "ndcg@3": 0.7133281768318479,
+        "ndcg@10": 0.8304973235985487,
+        "p@3": 0.7604166666666665,
+        "map": 0.8471794290273448
+      },
+      "desvio_desempate": {
+        "ndcg@3": 0.00812261118343051,
+        "ndcg@10": 0.0061323409041742155,
+        "p@3": 1.1102230246251565e-16,
+        "map": 0.006195362077383799
+      },
+      "n_valores_distintos": 145,
+      "n_videos": 264
+    },
+    "esperanca": {
+      "rotulo": "Só a esperança, sem as faixas",
+      "metricas": {
+        "ndcg@3": 0.7552940544863427,
+        "ndcg@10": 0.847743649237747,
+        "p@3": 0.8229166666666665,
+        "map": 0.8818000399280583
+      },
+      "desvio_desempate": {
+        "ndcg@3": 0.0,
+        "ndcg@10": 2.220446049250313e-16,
+        "p@3": 1.1102230246251565e-16,
+        "map": 0.0
+      },
+      "n_valores_distintos": 264,
+      "n_videos": 264
+    }
+  }
+}

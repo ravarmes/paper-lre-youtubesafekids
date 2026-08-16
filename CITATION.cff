@@ -1,0 +1,51 @@
+cff-version: 1.2.0
+message: "If you use this corpus or this code, please cite the article below."
+title: "YouTube Safe Kids — sentiment analysis: corpus and code"
+abstract: >-
+  Annotated corpus of 2,749 sentences in Brazilian Portuguese, transcribed from 251
+  public children's YouTube videos and labeled into three polarity classes by four
+  annotators; the code that trains and evaluates a BERTimbau classifier, converts the
+  prediction into an interpretable safety score and re-ranks search results by that
+  score; and the YouTube Safe Kids platform, a web application that applies the score
+  to live searches.
+type: dataset
+license: MIT
+repository-code: "https://github.com/ravarmes/paper-lre-youtubesafekids"
+authors:
+  - family-names: "dos Santos"
+    given-names: "Rafael Vargas Mesquita"
+    orcid: "https://orcid.org/0000-0002-3904-4537"
+    affiliation: "Instituto Federal do Espírito Santo (Ifes)"
+  - family-names: "de Salles"
+    given-names: "João Victor"
+    affiliation: "Instituto Federal do Espírito Santo (Ifes)"
+  - family-names: "Izo"
+    given-names: "Flávio"
+    affiliation: "Instituto Federal do Espírito Santo (Ifes)"
+  - family-names: "Vargas"
+    given-names: "Sabrina"
+    affiliation: "Faculdade do Espírito Santo (UNES)"
+keywords:
+  - sentiment analysis
+  - Brazilian Portuguese
+  - children's online safety
+  - search result reranking
+  - interpretable safety score
+  - BERTimbau
+  - language resources
+preferred-citation:
+  type: article
+  title: >-
+    A Sentiment-Annotated Corpus of Brazilian Portuguese Children's Video Transcripts:
+    Annotation Protocol, Classifier and Use in Search Result Re-ranking
+  journal: "Language Resources and Evaluation"
+  year: 2026
+  authors:
+    - family-names: "dos Santos"
+      given-names: "Rafael Vargas Mesquita"
+    - family-names: "de Salles"
+      given-names: "João Victor"
+    - family-names: "Izo"
+      given-names: "Flávio"
+    - family-names: "Vargas"
+      given-names: "Sabrina"

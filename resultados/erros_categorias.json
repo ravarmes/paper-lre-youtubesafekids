@@ -1,0 +1,659 @@
+{
+  "n": 79,
+  "categorias": {
+    "ruido": {
+      "rotulo": "Ruído de transcrição",
+      "n": 10,
+      "pct": 0.12658227848101267
+    },
+    "exposicao": {
+      "rotulo": "Exposição didática com léxico afetivo",
+      "n": 55,
+      "pct": 0.6962025316455697
+    },
+    "interrogativa": {
+      "rotulo": "Interrogativa de engajamento",
+      "n": 3,
+      "pct": 0.0379746835443038
+    },
+    "formula": {
+      "rotulo": "Fórmula fixa (cantiga ou máxima)",
+      "n": 11,
+      "pct": 0.13924050632911392
+    }
+  },
+  "itens": [
+    {
+      "i": 1,
+      "categoria": "exposicao",
+      "direcao": "Neutro->Positivo",
+      "n_tokens": 8,
+      "confianca": 0.9913705587387085,
+      "texto": "A Peppa não está escondida debaixo da mesa."
+    },
+    {
+      "i": 2,
+      "categoria": "interrogativa",
+      "direcao": "Neutro->Positivo",
+      "n_tokens": 4,
+      "confianca": 0.9212592244148254,
+      "texto": "Olá, amiguinhos! Tudo bem?"
+    },
+    {
+      "i": 3,
+      "categoria": "exposicao",
+      "direcao": "Neutro->Positivo",
+      "n_tokens": 17,
+      "confianca": 0.6340239644050598,
+      "texto": "A pré-história terminou com a chegada da escrita e é um período fascinante, você não acha?"
+    },
+    {
+      "i": 4,
+      "categoria": "exposicao",
+      "direcao": "Neutro->Positivo",
+      "n_tokens": 4,
+      "confianca": 0.9983293414115906,
+      "texto": "Sim, você ouviu bem."
+    },
+    {
+      "i": 5,
+      "categoria": "exposicao",
+      "direcao": "Neutro->Positivo",
+      "n_tokens": 8,
+      "confianca": 0.9518677592277527,
+      "texto": "Para que vocês lembrem de mim para sempre."
+    },
+    {
+      "i": 6,
+      "categoria": "interrogativa",
+      "direcao": "Neutro->Positivo",
+      "n_tokens": 3,
+      "confianca": 0.986284613609314,
+      "texto": "Não é incrível?"
+    },
+    {
+      "i": 7,
+      "categoria": "interrogativa",
+      "direcao": "Positivo->Neutro",
+      "n_tokens": 10,
+      "confianca": 0.9058544039726257,
+      "texto": "Vovó, o que aconteceu? Por que as orelhas estão grandes?"
+    },
+    {
+      "i": 8,
+      "categoria": "exposicao",
+      "direcao": "Positivo->Neutro",
+      "n_tokens": 10,
+      "confianca": 0.4068738520145416,
+      "texto": "Não se preocupe, o lobo não pode entrar nesta casa."
+    },
+    {
+      "i": 9,
+      "categoria": "exposicao",
+      "direcao": "Neutro->Positivo",
+      "n_tokens": 14,
+      "confianca": 0.9976503252983093,
+      "texto": "Não me diga que algum desastre vai acontecer, por isso que você está fugindo."
+    },
+    {
+      "i": 10,
+      "categoria": "exposicao",
+      "direcao": "Neutro->Positivo",
+      "n_tokens": 7,
+      "confianca": 0.5535804629325867,
+      "texto": "Por favor, para! Eu não aguento mais."
+    },
+    {
+      "i": 11,
+      "categoria": "exposicao",
+      "direcao": "Positivo->Neutro",
+      "n_tokens": 10,
+      "confianca": 0.8007262945175171,
+      "texto": "Eu já falei para você não mexer nos meus brinquedos."
+    },
+    {
+      "i": 12,
+      "categoria": "exposicao",
+      "direcao": "Positivo->Neutro",
+      "n_tokens": 6,
+      "confianca": 0.7290714979171753,
+      "texto": "Tá bom, irmã, eu te desculpo."
+    },
+    {
+      "i": 13,
+      "categoria": "exposicao",
+      "direcao": "Positivo->Neutro",
+      "n_tokens": 7,
+      "confianca": 0.7105759978294373,
+      "texto": "E quanto mais comem, mais gás soltam."
+    },
+    {
+      "i": 14,
+      "categoria": "exposicao",
+      "direcao": "Neutro->Positivo",
+      "n_tokens": 6,
+      "confianca": 0.9989711046218872,
+      "texto": "Ê, que legal! Que vento gostoso!"
+    },
+    {
+      "i": 15,
+      "categoria": "exposicao",
+      "direcao": "Positivo->Neutro",
+      "n_tokens": 12,
+      "confianca": 0.9967764019966125,
+      "texto": "Pois hoje você se parece mais com o Fred Krueger do Limoeiro."
+    },
+    {
+      "i": 16,
+      "categoria": "exposicao",
+      "direcao": "Neutro->Positivo",
+      "n_tokens": 29,
+      "confianca": 0.6067554950714111,
+      "texto": "eu sou o sol que eu faço a água evaporar parece que ela desaparece mas só esquenta a frutinha que futuro para o céu e subindo para o céu"
+    },
+    {
+      "i": 17,
+      "categoria": "ruido",
+      "direcao": "Positivo->Neutro",
+      "n_tokens": 15,
+      "confianca": 0.9961318969726562,
+      "texto": "pingo na minha cabeça mas Está sol ai G1 e foi chuva ao mesmo tempo"
+    },
+    {
+      "i": 18,
+      "categoria": "ruido",
+      "direcao": "Positivo->Neutro",
+      "n_tokens": 16,
+      "confianca": 0.9991251826286316,
+      "texto": "eu quero saber porque o gato mia Verde por fora vermelha por dentro é a melancia"
+    },
+    {
+      "i": 19,
+      "categoria": "ruido",
+      "direcao": "Positivo->Neutro",
+      "n_tokens": 15,
+      "confianca": 0.8277827501296997,
+      "texto": "eu decidi não querer um Oi gatinha Luna Por favor posso te perguntar de novo"
+    },
+    {
+      "i": 20,
+      "categoria": "exposicao",
+      "direcao": "Positivo->Neutro",
+      "n_tokens": 7,
+      "confianca": 0.6139040589332581,
+      "texto": "vai ver que foi aquele gato bagunceiro"
+    },
+    {
+      "i": 21,
+      "categoria": "exposicao",
+      "direcao": "Positivo->Neutro",
+      "n_tokens": 14,
+      "confianca": 0.9984673261642456,
+      "texto": "podemos ir na casa do galileu rapidinho a gente quer muito investigar uma coisa"
+    },
+    {
+      "i": 22,
+      "categoria": "ruido",
+      "direcao": "Neutro->Positivo",
+      "n_tokens": 15,
+      "confianca": 0.5257476568222046,
+      "texto": "uau queijo sal azeite e pimenta inteiro da cozinha do papai ser graves nos temperos"
+    },
+    {
+      "i": 23,
+      "categoria": "exposicao",
+      "direcao": "Positivo->Neutro",
+      "n_tokens": 15,
+      "confianca": 0.7984107136726379,
+      "texto": "a nuvem quentinha encosta no espelho ela volta a ser água e olha quantos gotinhas"
+    },
+    {
+      "i": 24,
+      "categoria": "exposicao",
+      "direcao": "Neutro->Positivo",
+      "n_tokens": 12,
+      "confianca": 0.7968109250068665,
+      "texto": "eu não sei se eu tô mais faminto ou cansado hein Júpiter"
+    },
+    {
+      "i": 25,
+      "categoria": "exposicao",
+      "direcao": "Neutro->Positivo",
+      "n_tokens": 15,
+      "confianca": 0.9990136027336121,
+      "texto": "Porque nós temos bastante ar dentro da gente é o ar que nos faz flutuar"
+    },
+    {
+      "i": 26,
+      "categoria": "exposicao",
+      "direcao": "Neutro->Positivo",
+      "n_tokens": 21,
+      "confianca": 0.815245509147644,
+      "texto": "porque a gente soluça O que é um soluço um tempo uma pessoa pode soluçar minutos horas ai São Tantas perguntas"
+    },
+    {
+      "i": 27,
+      "categoria": "exposicao",
+      "direcao": "Positivo->Neutro",
+      "n_tokens": 17,
+      "confianca": 0.7960127592086792,
+      "texto": "o fermento é Comilão e ele adora comer nosso açúcar e quanto mais comem mais gás solta"
+    },
+    {
+      "i": 28,
+      "categoria": "ruido",
+      "direcao": "Neutro->Positivo",
+      "n_tokens": 10,
+      "confianca": 0.9988983869552612,
+      "texto": "Porque ficou tudo embaçado oba também quero Oi mãe Luna"
+    },
+    {
+      "i": 29,
+      "categoria": "formula",
+      "direcao": "Neutro->Positivo",
+      "n_tokens": 17,
+      "confianca": 0.998709499835968,
+      "texto": "Espelho espelho meu existe alguém mais mais embaçado do que eu o que será que é isso"
+    },
+    {
+      "i": 30,
+      "categoria": "ruido",
+      "direcao": "Positivo->Neutro",
+      "n_tokens": 25,
+      "confianca": 0.7539737820625305,
+      "texto": "você é o garoto que tem nojo de legume vai chorar eu não gosto muito não como assim não gosta você nem conhece a gente"
+    },
+    {
+      "i": 31,
+      "categoria": "exposicao",
+      "direcao": "Positivo->Neutro",
+      "n_tokens": 30,
+      "confianca": 0.9405127763748169,
+      "texto": "Dinheiro não importa há 10 anos o papai ofereceu 10 milhões de dólares pra gente e Eu recusei amor é amor e sempre vão recusar porque dinheiro só complica tudo"
+    },
+    {
+      "i": 32,
+      "categoria": "formula",
+      "direcao": "Positivo->Neutro",
+      "n_tokens": 21,
+      "confianca": 0.750157356262207,
+      "texto": "Pai Francisco entrou na roda tocando o seu violão par vem de lá seu Delegado e pai Francisco foi pra prisão"
+    },
+    {
+      "i": 33,
+      "categoria": "ruido",
+      "direcao": "Neutro->Positivo",
+      "n_tokens": 31,
+      "confianca": 0.656724750995636,
+      "texto": "a gente encontra um mundo novo computador quanto os planetas na Via lcta São pelo menos 90% similares a terra 765 planetas conhecidos quantos deles estão fora da jurisdição da Federação"
+    },
+    {
+      "i": 34,
+      "categoria": "exposicao",
+      "direcao": "Positivo->Neutro",
+      "n_tokens": 21,
+      "confianca": 0.9985302686691284,
+      "texto": "a mente de luzes se antecipava enquanto os dois amantes se enrolavam no feno provavelmente atingido o gosto de Luiz servia"
+    },
+    {
+      "i": 35,
+      "categoria": "ruido",
+      "direcao": "Positivo->Neutro",
+      "n_tokens": 25,
+      "confianca": 0.9536782503128052,
+      "texto": "Você tá parecendo o meu pé quando a loja me deu um banho bem quente qual é não está tão ruim meu pelo vai crescer"
+    },
+    {
+      "i": 36,
+      "categoria": "exposicao",
+      "direcao": "Neutro->Positivo",
+      "n_tokens": 20,
+      "confianca": 0.6127656698226929,
+      "texto": "eu estou numa gincana preciso de um pé humano bom Como regra eu diria não mas tudo bem pode entrar"
+    },
+    {
+      "i": 37,
+      "categoria": "ruido",
+      "direcao": "Neutro->Positivo",
+      "n_tokens": 34,
+      "confianca": 0.6144233345985413,
+      "texto": "bota logo para fora dona está na hora do meu lanche da tarde meu Deus STE e acho que você está com fome amor Vá com calma dessa vez a mamãe tá muito dolorida"
+    },
+    {
+      "i": 38,
+      "categoria": "formula",
+      "direcao": "Positivo->Neutro",
+      "n_tokens": 14,
+      "confianca": 0.9976614713668823,
+      "texto": "inscreva-se no canal educativo da Smile and learn para aprender brincando se divertindo"
+    },
+    {
+      "i": 39,
+      "categoria": "exposicao",
+      "direcao": "Neutro->Positivo",
+      "n_tokens": 18,
+      "confianca": 0.9985952377319336,
+      "texto": "Essa manhã mesmo fui fazer cafuné no meu filho e ele atravessou o chão E ele tá bem"
+    },
+    {
+      "i": 40,
+      "categoria": "formula",
+      "direcao": "Positivo->Neutro",
+      "n_tokens": 29,
+      "confianca": 0.5814160108566284,
+      "texto": "Mariana Conta 10 é 1 é dois é TRS é quat é CCO é se é s é 8it é no é 10 é Ana viva Mariana viva Mariana"
+    },
+    {
+      "i": 41,
+      "categoria": "exposicao",
+      "direcao": "Positivo->Neutro",
+      "n_tokens": 36,
+      "confianca": 0.9954410791397095,
+      "texto": "ele comenta com a Diane sobre como todas essas garotas com que teve um relacionamento no passado eram alegres e cheias de vida no começo quando as conheceu mas sempre terminavam amargas depois de um tempo."
+    },
+    {
+      "i": 42,
+      "categoria": "exposicao",
+      "direcao": "Positivo->Neutro",
+      "n_tokens": 6,
+      "confianca": 0.9986381530761719,
+      "texto": "adoro fazer hora extra de graça"
+    },
+    {
+      "i": 43,
+      "categoria": "exposicao",
+      "direcao": "Positivo->Neutro",
+      "n_tokens": 3,
+      "confianca": 0.9990671873092651,
+      "texto": "eu vou começar"
+    },
+    {
+      "i": 44,
+      "categoria": "exposicao",
+      "direcao": "Positivo->Neutro",
+      "n_tokens": 8,
+      "confianca": 0.998711884021759,
+      "texto": "obrigado eu espero que o patrão não confisco"
+    },
+    {
+      "i": 45,
+      "categoria": "exposicao",
+      "direcao": "Neutro->Positivo",
+      "n_tokens": 16,
+      "confianca": 0.9978179931640625,
+      "texto": "e agora que a dona coelha gentilmente inundou jardim podemos pular pra cima e pra baixo"
+    },
+    {
+      "i": 46,
+      "categoria": "exposicao",
+      "direcao": "Neutro->Positivo",
+      "n_tokens": 14,
+      "confianca": 0.6250393986701965,
+      "texto": "nossa o doutor urso marrom está com a tocha do pedro não se preocupe"
+    },
+    {
+      "i": 47,
+      "categoria": "exposicao",
+      "direcao": "Neutro->Positivo",
+      "n_tokens": 16,
+      "confianca": 0.6614189743995667,
+      "texto": "Galinha Azul mas isso nem existe existem sim ela é a galinha mais rara do mundo"
+    },
+    {
+      "i": 48,
+      "categoria": "exposicao",
+      "direcao": "Positivo->Neutro",
+      "n_tokens": 4,
+      "confianca": 0.9987367391586304,
+      "texto": "uma brincadeira depois cama"
+    },
+    {
+      "i": 49,
+      "categoria": "exposicao",
+      "direcao": "Positivo->Neutro",
+      "n_tokens": 11,
+      "confianca": 0.9988973736763,
+      "texto": "vem comigo aqui meu presente de agradecimento que uma garota teria."
+    },
+    {
+      "i": 50,
+      "categoria": "exposicao",
+      "direcao": "Positivo->Neutro",
+      "n_tokens": 7,
+      "confianca": 0.5704437494277954,
+      "texto": "olha a flor pegou água e subiu"
+    },
+    {
+      "i": 51,
+      "categoria": "exposicao",
+      "direcao": "Positivo->Neutro",
+      "n_tokens": 7,
+      "confianca": 0.9688825607299805,
+      "texto": "segurando fatias de pizza perto do coração"
+    },
+    {
+      "i": 52,
+      "categoria": "exposicao",
+      "direcao": "Positivo->Neutro",
+      "n_tokens": 7,
+      "confianca": 0.9512239694595337,
+      "texto": "foi divertido começar a seguir conchas marinhas"
+    },
+    {
+      "i": 53,
+      "categoria": "exposicao",
+      "direcao": "Neutro->Positivo",
+      "n_tokens": 18,
+      "confianca": 0.8969358205795288,
+      "texto": "a Suzi veio brincar com a Peppa olá Peppa olá Suzi esse é o meu novo amigo Peppa"
+    },
+    {
+      "i": 54,
+      "categoria": "exposicao",
+      "direcao": "Positivo->Neutro",
+      "n_tokens": 21,
+      "confianca": 0.6956921815872192,
+      "texto": "Vou jogar essa garrafa vazia na lata de lixo Peppa pare por qu não se joga garrafa na lata de lixo"
+    },
+    {
+      "i": 55,
+      "categoria": "exposicao",
+      "direcao": "Positivo->Neutro",
+      "n_tokens": 10,
+      "confianca": 0.9979531168937683,
+      "texto": "hoje está chovendo e o telhado da escola está furado"
+    },
+    {
+      "i": 56,
+      "categoria": "exposicao",
+      "direcao": "Positivo->Neutro",
+      "n_tokens": 5,
+      "confianca": 0.7898327112197876,
+      "texto": "bom trabalho em equipe robô"
+    },
+    {
+      "i": 57,
+      "categoria": "exposicao",
+      "direcao": "Neutro->Positivo",
+      "n_tokens": 18,
+      "confianca": 0.9991298913955688,
+      "texto": "olha só o Léo e ele também tá pulando ah todos adoram ficar pulando em poças de lão"
+    },
+    {
+      "i": 58,
+      "categoria": "ruido",
+      "direcao": "Neutro->Positivo",
+      "n_tokens": 18,
+      "confianca": 0.9686628580093384,
+      "texto": "O Senhor achou a nossa chave não o guindas não é longo bastante o que devemos fazer agora"
+    },
+    {
+      "i": 59,
+      "categoria": "exposicao",
+      "direcao": "Positivo->Neutro",
+      "n_tokens": 8,
+      "confianca": 0.7351799011230469,
+      "texto": "vamos George vamos achar mais algumas coisas brilhantes"
+    },
+    {
+      "i": 60,
+      "categoria": "exposicao",
+      "direcao": "Positivo->Neutro",
+      "n_tokens": 6,
+      "confianca": 0.9920614957809448,
+      "texto": "a matilda robô voltou ao normal"
+    },
+    {
+      "i": 61,
+      "categoria": "formula",
+      "direcao": "Neutro->Positivo",
+      "n_tokens": 7,
+      "confianca": 0.8805727958679199,
+      "texto": "boa noite para todos e durmam bem"
+    },
+    {
+      "i": 62,
+      "categoria": "exposicao",
+      "direcao": "Neutro->Positivo",
+      "n_tokens": 7,
+      "confianca": 0.8373492956161499,
+      "texto": "a abertura da série é muito fofa."
+    },
+    {
+      "i": 63,
+      "categoria": "exposicao",
+      "direcao": "Neutro->Positivo",
+      "n_tokens": 5,
+      "confianca": 0.595676839351654,
+      "texto": "olha o passarinho no céu"
+    },
+    {
+      "i": 64,
+      "categoria": "exposicao",
+      "direcao": "Neutro->Positivo",
+      "n_tokens": 14,
+      "confianca": 0.9989994764328003,
+      "texto": "Eu já consegui o segundo item para o piquenique agora só falta comida gostosa"
+    },
+    {
+      "i": 65,
+      "categoria": "exposicao",
+      "direcao": "Positivo->Neutro",
+      "n_tokens": 8,
+      "confianca": 0.9362556338310242,
+      "texto": "ele compartilhou o tesouro com seus amigos peixes"
+    },
+    {
+      "i": 66,
+      "categoria": "formula",
+      "direcao": "Positivo->Neutro",
+      "n_tokens": 3,
+      "confianca": 0.906779408454895,
+      "texto": "ninguém é perfeito"
+    },
+    {
+      "i": 67,
+      "categoria": "exposicao",
+      "direcao": "Positivo->Neutro",
+      "n_tokens": 7,
+      "confianca": 0.9980785250663757,
+      "texto": "voltei lá para cima com meus amigos"
+    },
+    {
+      "i": 68,
+      "categoria": "exposicao",
+      "direcao": "Positivo->Neutro",
+      "n_tokens": 15,
+      "confianca": 0.9972293972969055,
+      "texto": "agora que já juntamos o bastante podemos ir ao centro de reciclagem viva vamos lá"
+    },
+    {
+      "i": 69,
+      "categoria": "exposicao",
+      "direcao": "Neutro->Positivo",
+      "n_tokens": 10,
+      "confianca": 0.9581762552261353,
+      "texto": "esse é o melhor dia de todos vamos nos divertir"
+    },
+    {
+      "i": 70,
+      "categoria": "exposicao",
+      "direcao": "Neutro->Positivo",
+      "n_tokens": 15,
+      "confianca": 0.7392755150794983,
+      "texto": "esse é o super motor de mergulho uau estamos indo mais rápidos que os peixes"
+    },
+    {
+      "i": 71,
+      "categoria": "exposicao",
+      "direcao": "Neutro->Positivo",
+      "n_tokens": 20,
+      "confianca": 0.734589695930481,
+      "texto": "o ralo é muito fundo para que servem os ralos os ralos levam a água da chuva para o mar"
+    },
+    {
+      "i": 72,
+      "categoria": "exposicao",
+      "direcao": "Positivo->Neutro",
+      "n_tokens": 13,
+      "confianca": 0.7148733139038086,
+      "texto": "Este é o centro de reciclagem da dona coelha chegamos viva Olá pessoal"
+    },
+    {
+      "i": 73,
+      "categoria": "exposicao",
+      "direcao": "Positivo->Neutro",
+      "n_tokens": 5,
+      "confianca": 0.6512444019317627,
+      "texto": "as conchas brilhavam sem falhar"
+    },
+    {
+      "i": 74,
+      "categoria": "exposicao",
+      "direcao": "Positivo->Neutro",
+      "n_tokens": 5,
+      "confianca": 0.9991254806518555,
+      "texto": "nos considere seus amigos felinos"
+    },
+    {
+      "i": 75,
+      "categoria": "formula",
+      "direcao": "Neutro->Positivo",
+      "n_tokens": 11,
+      "confianca": 0.9974370002746582,
+      "texto": "a lata lata a lata Agora é a vez de vocês"
+    },
+    {
+      "i": 76,
+      "categoria": "formula",
+      "direcao": "Neutro->Positivo",
+      "n_tokens": 18,
+      "confianca": 0.9983657598495483,
+      "texto": "O passado pode doer, mas da maneira que eu vejo, você pode fugir dele ou aprender com ele."
+    },
+    {
+      "i": 77,
+      "categoria": "formula",
+      "direcao": "Neutro->Positivo",
+      "n_tokens": 8,
+      "confianca": 0.9946309924125671,
+      "texto": "Nunca olho para trás, querido. Distrai do agora."
+    },
+    {
+      "i": 78,
+      "categoria": "formula",
+      "direcao": "Positivo->Neutro",
+      "n_tokens": 10,
+      "confianca": 0.9989797472953796,
+      "texto": "A casca de uma ostra esconde apenas a pérola dentro."
+    },
+    {
+      "i": 79,
+      "categoria": "formula",
+      "direcao": "Neutro->Positivo",
+      "n_tokens": 6,
+      "confianca": 0.9980860948562622,
+      "texto": "Você é responsável pelos seus choques."
+    }
+  ]
+}

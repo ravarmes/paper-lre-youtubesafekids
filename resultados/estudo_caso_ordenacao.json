@@ -1,0 +1,1464 @@
+{
+  "gerado_em": "2026-08-16T10:19:24",
+  "fonte_videos": "reordenacao_buscas.csv",
+  "n_videos": 40,
+  "n_consultas": 4,
+  "classificador": {
+    "modelo": "neuralmind/bert-base-portuguese-cased",
+    "folds": 5,
+    "epocas": 5,
+    "batch": 8,
+    "lr": 3e-05,
+    "warmup": 100,
+    "agregacao": "soft voting"
+  },
+  "videos_excluidos_do_treino": {
+    "Rick And Morty Dublado - Completo": 14,
+    "As 5 melhores músicas infantis! Cante com Léo, o caminhão curioso! Desenho animado para crianças": 13
+  },
+  "n_sentencas_treino_apos_exclusao": 2722,
+  "verificacao_teste_retido": {
+    "Negativo": {
+      "precisao": 0.9125,
+      "recall": 0.8488372093023255,
+      "f1": 0.8795180722891567,
+      "suporte": 172
+    },
+    "Neutro": {
+      "precisao": 0.7317073170731707,
+      "recall": 0.7692307692307693,
+      "f1": 0.7499999999999999,
+      "suporte": 195
+    },
+    "Positivo": {
+      "precisao": 0.7222222222222222,
+      "recall": 0.7303370786516854,
+      "f1": 0.7262569832402235,
+      "suporte": 178
+    },
+    "acuracia": 0.781651376146789,
+    "f1_macro": 0.7852583518431265,
+    "precisao_macro": 0.7888098464317976,
+    "recall_macro": 0.78280168572826
+  },
+  "f1_macro_por_fold": [
+    0.7748646664831637,
+    0.7760280097533241,
+    0.7707369443714643,
+    0.7682326798806063,
+    0.7636235757727192
+  ],
+  "separacao_estratos": {
+    "score_bloco": {
+      "media_A": 0.8146059952741054,
+      "media_B": 0.30606490266742187,
+      "min_A": 0.7743654334917665,
+      "min_B": 0.10010846853256226,
+      "max_A": 0.8498719146838993,
+      "max_B": 0.7858680091798305,
+      "diferenca": 0.5085410926066836,
+      "mannwhitney": {
+        "u": 388.0,
+        "z": 5.0718916950043065,
+        "p": 3.9388054728917155e-07
+      },
+      "auc": 0.97,
+      "auc_ic95": [
+        0.92,
+        1.0
+      ]
+    },
+    "score_sentenca": {
+      "media_A": 0.7361987106348654,
+      "media_B": 0.5301526687245495,
+      "min_A": 0.3834936464826266,
+      "min_B": 0.3250556984576784,
+      "max_A": 0.8267148376355181,
+      "max_B": 0.8090361506736371,
+      "diferenca": 0.20604604191031595,
+      "mannwhitney": {
+        "u": 337.0,
+        "z": 3.692337153963135,
+        "p": 0.00022220262013683545
+      },
+      "auc": 0.8425,
+      "auc_ic95": [
+        0.7075,
+        0.9525
+      ]
+    }
+  },
+  "por_termo": {
+    "desenho animado infantil": {
+      "estrato": "A_responsavel",
+      "n": 10,
+      "media": 0.8210501168355403,
+      "min": 0.7753000814234837,
+      "max": 0.8498719146838993,
+      "amplitude": 0.07457183326041561
+    },
+    "vídeo educativo para crianças": {
+      "estrato": "A_responsavel",
+      "n": 10,
+      "media": 0.8081618737126701,
+      "min": 0.7743654334917665,
+      "max": 0.8490369325270876,
+      "amplitude": 0.07467149903532111
+    },
+    "south park português dublado": {
+      "estrato": "B_apelo_infantil",
+      "n": 10,
+      "media": 0.3077958199055866,
+      "min": 0.10015852451324464,
+      "max": 0.7764214741066098,
+      "amplitude": 0.6762629495933652
+    },
+    "rick and morty engraçado": {
+      "estrato": "B_apelo_infantil",
+      "n": 10,
+      "media": 0.30433398542925716,
+      "min": 0.10010846853256226,
+      "max": 0.7858680091798305,
+      "amplitude": 0.6857595406472682
+    }
+  },
+  "deteccao_por_limiar": [
+    {
+      "limiar": 0.3,
+      "detectados_b": 14,
+      "total_b": 20,
+      "falsos_a": 0,
+      "total_a": 20
+    },
+    {
+      "limiar": 0.4,
+      "detectados_b": 14,
+      "total_b": 20,
+      "falsos_a": 0,
+      "total_a": 20
+    },
+    {
+      "limiar": 0.5,
+      "detectados_b": 14,
+      "total_b": 20,
+      "falsos_a": 0,
+      "total_a": 20
+    },
+    {
+      "limiar": 0.6,
+      "detectados_b": 14,
+      "total_b": 20,
+      "falsos_a": 0,
+      "total_a": 20
+    },
+    {
+      "limiar": 0.7,
+      "detectados_b": 14,
+      "total_b": 20,
+      "falsos_a": 0,
+      "total_a": 20
+    }
+  ],
+  "mudanca_de_ordem": {
+    "desenho animado infantil": {
+      "estrato": "A_responsavel",
+      "kendall_tau": 0.4666666666666667,
+      "deslocamento_medio": 2.0,
+      "deslocamento_max": 5,
+      "top3_sobreposicao": 0.3333333333333333,
+      "primeiro_do_youtube": {
+        "titulo": "As 5 melhores músicas infantis! Cante com Léo, o caminhão curioso! Desenho animado para crianças",
+        "para": 1,
+        "score": 0.8498719146838993,
+        "classe": "Positivo"
+      },
+      "amplitude_score": 0.07457183326041561
+    },
+    "vídeo educativo para crianças": {
+      "estrato": "A_responsavel",
+      "kendall_tau": -0.3333333333333333,
+      "deslocamento_medio": 3.8,
+      "deslocamento_max": 8,
+      "top3_sobreposicao": 0.3333333333333333,
+      "primeiro_do_youtube": {
+        "titulo": "Aeiou - Animaguel | Atividades com as vogais | Vídeo educativo (Música infantil)",
+        "para": 8,
+        "score": 0.7752011246047914,
+        "classe": "Neutro"
+      },
+      "amplitude_score": 0.07467149903532111
+    },
+    "south park português dublado": {
+      "estrato": "B_apelo_infantil",
+      "kendall_tau": -0.022222222222222223,
+      "deslocamento_medio": 3.6,
+      "deslocamento_max": 8,
+      "top3_sobreposicao": 0.3333333333333333,
+      "primeiro_do_youtube": {
+        "titulo": "30 Minutos de Risadas com a Galerinha de South Park | Pluto TV",
+        "para": 6,
+        "score": 0.10053113698959351,
+        "classe": "Negativo"
+      },
+      "amplitude_score": 0.6762629495933652
+    },
+    "rick and morty engraçado": {
+      "estrato": "B_apelo_infantil",
+      "kendall_tau": 0.15555555555555556,
+      "deslocamento_medio": 3.0,
+      "deslocamento_max": 7,
+      "top3_sobreposicao": 0.3333333333333333,
+      "primeiro_do_youtube": {
+        "titulo": "Sobrevivendo aos Piores Predadores do Universo | Rick and Morty Brasil | adult swim",
+        "para": 5,
+        "score": 0.10393753051757813,
+        "classe": "Negativo"
+      },
+      "amplitude_score": 0.6857595406472682
+    }
+  },
+  "deslocamentos": [
+    {
+      "termo": "desenho animado infantil",
+      "estrato": "A_responsavel",
+      "titulo": "As 5 melhores músicas infantis! Cante com Léo, o caminhão curioso! Desenho animado para crianças",
+      "de": 1,
+      "para": 1,
+      "delta": 0,
+      "score": 0.8498719146838993,
+      "classe": "Positivo"
+    },
+    {
+      "termo": "desenho animado infantil",
+      "estrato": "A_responsavel",
+      "titulo": "Bento e Totó - O Patinho Colorido (Desenho Infantil)",
+      "de": 2,
+      "para": 5,
+      "delta": 3,
+      "score": 0.8412305980920791,
+      "classe": "Positivo"
+    },
+    {
+      "termo": "desenho animado infantil",
+      "estrato": "A_responsavel",
+      "titulo": "🌧️ Chuva, Chuva, Vá Embora | Desenho Infantil | Lalafun em Português",
+      "de": 3,
+      "para": 8,
+      "delta": 5,
+      "score": 0.7921654224395751,
+      "classe": "Neutro"
+    },
+    {
+      "termo": "desenho animado infantil",
+      "estrato": "A_responsavel",
+      "titulo": "Bento e Totó - Funk do Patinho (Desenho Infantil)",
+      "de": 4,
+      "para": 4,
+      "delta": 0,
+      "score": 0.843567856028676,
+      "classe": "Positivo"
+    },
+    {
+      "termo": "desenho animado infantil",
+      "estrato": "A_responsavel",
+      "titulo": "Desenho Infantil | 22 Minutos de Histórias do José Totoy | Em Português Completo",
+      "de": 5,
+      "para": 2,
+      "delta": -3,
+      "score": 0.8489018772263079,
+      "classe": "Positivo"
+    },
+    {
+      "termo": "desenho animado infantil",
+      "estrato": "A_responsavel",
+      "titulo": "Brincar com Slime é Legal | Músicas Infantis | Sim! Neo | BabyBus Português",
+      "de": 6,
+      "para": 3,
+      "delta": -3,
+      "score": 0.8483040118589997,
+      "classe": "Positivo"
+    },
+    {
+      "termo": "desenho animado infantil",
+      "estrato": "A_responsavel",
+      "titulo": "🔴 AO VIVO 🔴 Detetive Labrador 👮‍♂ Regras de Segurança no Elevador⚠️ Desenhos Infantis",
+      "de": 7,
+      "para": 6,
+      "delta": -1,
+      "score": 0.8297094419598579,
+      "classe": "Positivo"
+    },
+    {
+      "termo": "desenho animado infantil",
+      "estrato": "A_responsavel",
+      "titulo": "Brincando com Hophop, a coruja, e o pinguinzinho! Desenho animado infantil em português",
+      "de": 8,
+      "para": 9,
+      "delta": 1,
+      "score": 0.7790874183177947,
+      "classe": "Neutro"
+    },
+    {
+      "termo": "desenho animado infantil",
+      "estrato": "A_responsavel",
+      "titulo": "Mundo de Papelão | Detetive Labrador | Desenhos Animados | Desenhos Infantis | BabyBus Português",
+      "de": 9,
+      "para": 10,
+      "delta": 1,
+      "score": 0.7753000814234837,
+      "classe": "Neutro"
+    },
+    {
+      "termo": "desenho animado infantil",
+      "estrato": "A_responsavel",
+      "titulo": "O Teste da Amizade 🔍✅ Coleção de desenhos animados",
+      "de": 10,
+      "para": 7,
+      "delta": -3,
+      "score": 0.8023625463247299,
+      "classe": "Neutro"
+    },
+    {
+      "termo": "vídeo educativo para crianças",
+      "estrato": "A_responsavel",
+      "titulo": "Aeiou - Animaguel | Atividades com as vogais | Vídeo educativo (Música infantil)",
+      "de": 1,
+      "para": 8,
+      "delta": 7,
+      "score": 0.7752011246047914,
+      "classe": "Neutro"
+    },
+    {
+      "termo": "vídeo educativo para crianças",
+      "estrato": "A_responsavel",
+      "titulo": "De Onde Vem a Onda?",
+      "de": 2,
+      "para": 10,
+      "delta": 8,
+      "score": 0.7743654334917665,
+      "classe": "Neutro"
+    },
+    {
+      "termo": "vídeo educativo para crianças",
+      "estrato": "A_responsavel",
+      "titulo": "As 5 melhores músicas infantis! Cante com Léo, o caminhão curioso! Desenho animado para crianças",
+      "de": 3,
+      "para": 1,
+      "delta": -2,
+      "score": 0.8490369325270876,
+      "classe": "Positivo"
+    },
+    {
+      "termo": "vídeo educativo para crianças",
+      "estrato": "A_responsavel",
+      "titulo": "Jac Jacaré | Escova, escova [Clipe Infantil]",
+      "de": 4,
+      "para": 4,
+      "delta": 0,
+      "score": 0.8335373252630234,
+      "classe": "Positivo"
+    },
+    {
+      "termo": "vídeo educativo para crianças",
+      "estrato": "A_responsavel",
+      "titulo": "Aprenda ADIÇÃO e SUBTRAÇÃO | Episódios Completos | Numberblocks em português Brasil",
+      "de": 5,
+      "para": 9,
+      "delta": 4,
+      "score": 0.7751405829563737,
+      "classe": "Neutro"
+    },
+    {
+      "termo": "vídeo educativo para crianças",
+      "estrato": "A_responsavel",
+      "titulo": "AO VIVO🔴: Episódios Completos | Bluey",
+      "de": 6,
+      "para": 6,
+      "delta": 0,
+      "score": 0.7926384881138802,
+      "classe": "Neutro"
+    },
+    {
+      "termo": "vídeo educativo para crianças",
+      "estrato": "A_responsavel",
+      "titulo": "Admita Seu Erro e Não Minta | Nossos Sentimentos | Vídeo Educativo | BabyBus Português",
+      "de": 7,
+      "para": 5,
+      "delta": -2,
+      "score": 0.8183628261089324,
+      "classe": "Positivo"
+    },
+    {
+      "termo": "vídeo educativo para crianças",
+      "estrato": "A_responsavel",
+      "titulo": "Blippi Português Afunda ou Flutua | Vídeos de ciência para crianças | Vídeos Educativos",
+      "de": 8,
+      "para": 7,
+      "delta": -1,
+      "score": 0.7824946518987417,
+      "classe": "Neutro"
+    },
+    {
+      "termo": "vídeo educativo para crianças",
+      "estrato": "A_responsavel",
+      "titulo": "Desenho Infantil Totoy | 53 Minutos de Historinhas do José Totoy!!! Em Português Completo",
+      "de": 9,
+      "para": 3,
+      "delta": -6,
+      "score": 0.838946533948183,
+      "classe": "Positivo"
+    },
+    {
+      "termo": "vídeo educativo para crianças",
+      "estrato": "A_responsavel",
+      "titulo": "MARATONA DO MEIO AMBIENTE ♻️ O Show da Luna!",
+      "de": 10,
+      "para": 2,
+      "delta": -8,
+      "score": 0.8418948382139205,
+      "classe": "Positivo"
+    },
+    {
+      "termo": "south park português dublado",
+      "estrato": "B_apelo_infantil",
+      "titulo": "30 Minutos de Risadas com a Galerinha de South Park | Pluto TV",
+      "de": 1,
+      "para": 6,
+      "delta": 5,
+      "score": 0.10053113698959351,
+      "classe": "Negativo"
+    },
+    {
+      "termo": "south park português dublado",
+      "estrato": "B_apelo_infantil",
+      "titulo": "Scott Tenorman deve morrer",
+      "de": 2,
+      "para": 10,
+      "delta": 8,
+      "score": 0.10015852451324464,
+      "classe": "Negativo"
+    },
+    {
+      "termo": "south park português dublado",
+      "estrato": "B_apelo_infantil",
+      "titulo": "patinetes - parte 1 - SOUTH PARK (completo)",
+      "de": 3,
+      "para": 1,
+      "delta": -2,
+      "score": 0.7764214741066098,
+      "classe": "Neutro"
+    },
+    {
+      "termo": "south park português dublado",
+      "estrato": "B_apelo_infantil",
+      "titulo": "Os Melhores Episódios de South Park | Pluto TV",
+      "de": 4,
+      "para": 7,
+      "delta": 3,
+      "score": 0.10039249658584595,
+      "classe": "Negativo"
+    },
+    {
+      "termo": "south park português dublado",
+      "estrato": "B_apelo_infantil",
+      "titulo": "SOUTH PARK - EPISÓDIO - CARTMAN ENCONTRA O AMOR - PARTE 1",
+      "de": 5,
+      "para": 3,
+      "delta": -2,
+      "score": 0.7493879783898592,
+      "classe": "Neutro"
+    },
+    {
+      "termo": "south park português dublado",
+      "estrato": "B_apelo_infantil",
+      "titulo": "Cartman machista opressor - SOUTH PARK",
+      "de": 6,
+      "para": 8,
+      "delta": 2,
+      "score": 0.10022661685943604,
+      "classe": "Negativo"
+    },
+    {
+      "termo": "south park português dublado",
+      "estrato": "B_apelo_infantil",
+      "titulo": "DESENHO PARA ASSISTIR CHAPADO - ASSISTA CHAPADO - SOUTH PARK",
+      "de": 7,
+      "para": 5,
+      "delta": -2,
+      "score": 0.10288770198822023,
+      "classe": "Negativo"
+    },
+    {
+      "termo": "south park português dublado",
+      "estrato": "B_apelo_infantil",
+      "titulo": "30 Minutos de South Park | Pluto TV",
+      "de": 8,
+      "para": 2,
+      "delta": -6,
+      "score": 0.7749278774950653,
+      "classe": "Neutro"
+    },
+    {
+      "termo": "south park português dublado",
+      "estrato": "B_apelo_infantil",
+      "titulo": "South Park: A Fenda que Abunda a Força - O Filme (Dublado)",
+      "de": 9,
+      "para": 4,
+      "delta": -5,
+      "score": 0.17284369468688965,
+      "classe": "Negativo"
+    },
+    {
+      "termo": "south park português dublado",
+      "estrato": "B_apelo_infantil",
+      "titulo": "30 MINUTOS das MAIORES MALDADES do Cartman | South Park | Pluto TV",
+      "de": 10,
+      "para": 9,
+      "delta": -1,
+      "score": 0.10018069744110109,
+      "classe": "Negativo"
+    },
+    {
+      "termo": "rick and morty engraçado",
+      "estrato": "B_apelo_infantil",
+      "titulo": "Sobrevivendo aos Piores Predadores do Universo | Rick and Morty Brasil | adult swim",
+      "de": 1,
+      "para": 5,
+      "delta": 4,
+      "score": 0.10393753051757813,
+      "classe": "Negativo"
+    },
+    {
+      "termo": "rick and morty engraçado",
+      "estrato": "B_apelo_infantil",
+      "titulo": "A experiência amorosa | Rick & Morty | Adult Swim Brasil",
+      "de": 2,
+      "para": 2,
+      "delta": 0,
+      "score": 0.7749276025686412,
+      "classe": "Neutro"
+    },
+    {
+      "termo": "rick and morty engraçado",
+      "estrato": "B_apelo_infantil",
+      "titulo": "Rick e Morty: tudo por uma selfie | Rick & Morty | Adult Swim Brasil",
+      "de": 3,
+      "para": 4,
+      "delta": 1,
+      "score": 0.1357789397239685,
+      "classe": "Negativo"
+    },
+    {
+      "termo": "rick and morty engraçado",
+      "estrato": "B_apelo_infantil",
+      "titulo": "Rick And Morty Dublado - Completo",
+      "de": 4,
+      "para": 8,
+      "delta": 4,
+      "score": 0.1001326322555542,
+      "classe": "Negativo"
+    },
+    {
+      "termo": "rick and morty engraçado",
+      "estrato": "B_apelo_infantil",
+      "titulo": "O problema com os problemas | Rick & Morty | Adult Swim Brasil",
+      "de": 5,
+      "para": 3,
+      "delta": -2,
+      "score": 0.7406030170153826,
+      "classe": "Neutro"
+    },
+    {
+      "termo": "rick and morty engraçado",
+      "estrato": "B_apelo_infantil",
+      "titulo": "Vô fazê sá porra!!!",
+      "de": 6,
+      "para": 10,
+      "delta": 4,
+      "score": 0.10010846853256226,
+      "classe": "Negativo"
+    },
+    {
+      "termo": "rick and morty engraçado",
+      "estrato": "B_apelo_infantil",
+      "titulo": "Rick Chapa Com Dragão Rick And Morty Dublado",
+      "de": 7,
+      "para": 9,
+      "delta": 2,
+      "score": 0.10012300014495851,
+      "classe": "Negativo"
+    },
+    {
+      "termo": "rick and morty engraçado",
+      "estrato": "B_apelo_infantil",
+      "titulo": "Os melhores momentos de suspense da 1ª temporada | Rick and Morty | Adult Swim",
+      "de": 8,
+      "para": 1,
+      "delta": -7,
+      "score": 0.7858680091798305,
+      "classe": "Neutro"
+    },
+    {
+      "termo": "rick and morty engraçado",
+      "estrato": "B_apelo_infantil",
+      "titulo": "Parasitas invasores | Rick & Morty | Adult Swim Brasil",
+      "de": 9,
+      "para": 6,
+      "delta": -3,
+      "score": 0.10144201517105103,
+      "classe": "Negativo"
+    },
+    {
+      "termo": "rick and morty engraçado",
+      "estrato": "B_apelo_infantil",
+      "titulo": "🔴 Rick and Morty Brasil: Clipes das Temps. 1-3 | Melhores Momentos | Ao Vivo",
+      "de": 10,
+      "para": 7,
+      "delta": -3,
+      "score": 0.10041863918304444,
+      "classe": "Negativo"
+    }
+  ],
+  "videos": [
+    {
+      "estrato": "A_responsavel",
+      "termo": "desenho animado infantil",
+      "posicao": 1,
+      "titulo": "As 5 melhores músicas infantis! Cante com Léo, o caminhão curioso! Desenho animado para crianças",
+      "classe": "Positivo",
+      "confianca": 0.9987089037895203,
+      "adequacao_predita": 0.9991460978926625,
+      "probs": [
+        0.00041661752038635314,
+        0.0008743882062844932,
+        0.9987089037895203
+      ],
+      "score_bloco": 0.8498719146838993,
+      "score_sentenca": 0.8179707610863262,
+      "classes_frases": [
+        "Positivo",
+        "Neutro",
+        "Positivo"
+      ]
+    },
+    {
+      "estrato": "A_responsavel",
+      "termo": "desenho animado infantil",
+      "posicao": 2,
+      "titulo": "Bento e Totó - O Patinho Colorido (Desenho Infantil)",
+      "classe": "Positivo",
+      "confianca": 0.8840407133102417,
+      "adequacao_predita": 0.9415373206138611,
+      "probs": [
+        0.0009660637006163597,
+        0.11499321460723877,
+        0.8840407133102417
+      ],
+      "score_bloco": 0.8412305980920791,
+      "score_sentenca": 0.3834936464826266,
+      "classes_frases": [
+        "Negativo",
+        "Neutro",
+        "Negativo"
+      ]
+    },
+    {
+      "estrato": "A_responsavel",
+      "termo": "desenho animado infantil",
+      "posicao": 3,
+      "titulo": "🌧️ Chuva, Chuva, Vá Embora | Desenho Infantil | Lalafun em Português",
+      "classe": "Neutro",
+      "confianca": 0.7654440402984619,
+      "adequacao_predita": 0.614436149597168,
+      "probs": [
+        0.0028418037109076977,
+        0.7654440402984619,
+        0.231714129447937
+      ],
+      "score_bloco": 0.7921654224395751,
+      "score_sentenca": 0.5750538414334491,
+      "classes_frases": [
+        "Negativo",
+        "Positivo",
+        "Neutro"
+      ]
+    },
+    {
+      "estrato": "A_responsavel",
+      "termo": "desenho animado infantil",
+      "posicao": 4,
+      "titulo": "Bento e Totó - Funk do Patinho (Desenho Infantil)",
+      "classe": "Positivo",
+      "confianca": 0.9148865938186646,
+      "adequacao_predita": 0.9571190401911736,
+      "probs": [
+        0.0006484777550213039,
+        0.084464892745018,
+        0.9148865938186646
+      ],
+      "score_bloco": 0.843567856028676,
+      "score_sentenca": 0.8142197523324285,
+      "classes_frases": [
+        "Neutro",
+        "Positivo",
+        "Positivo"
+      ]
+    },
+    {
+      "estrato": "A_responsavel",
+      "termo": "desenho animado infantil",
+      "posicao": 5,
+      "titulo": "Desenho Infantil | 22 Minutos de Histórias do José Totoy | Em Português Completo",
+      "classe": "Positivo",
+      "confianca": 0.9857592582702637,
+      "adequacao_predita": 0.9926791815087199,
+      "probs": [
+        0.0004009132389910519,
+        0.013839846476912498,
+        0.9857592582702637
+      ],
+      "score_bloco": 0.8489018772263079,
+      "score_sentenca": 0.8203831193735822,
+      "classes_frases": [
+        "Neutro",
+        "Positivo",
+        "Positivo"
+      ]
+    },
+    {
+      "estrato": "A_responsavel",
+      "termo": "desenho animado infantil",
+      "posicao": 6,
+      "titulo": "Brincar com Slime é Legal | Músicas Infantis | Sim! Neo | BabyBus Português",
+      "classe": "Positivo",
+      "confianca": 0.9782923460006714,
+      "adequacao_predita": 0.9886934123933315,
+      "probs": [
+        0.0009055151604115963,
+        0.020802132785320282,
+        0.9782923460006714
+      ],
+      "score_bloco": 0.8483040118589997,
+      "score_sentenca": 0.7872425255132839,
+      "classes_frases": [
+        "Positivo",
+        "Neutro",
+        "Neutro"
+      ]
+    },
+    {
+      "estrato": "A_responsavel",
+      "termo": "desenho animado infantil",
+      "posicao": 7,
+      "titulo": "🔴 AO VIVO 🔴 Detetive Labrador 👮‍♂ Regras de Segurança no Elevador⚠️ Desenhos Infantis",
+      "classe": "Positivo",
+      "confianca": 0.7323645949363708,
+      "adequacao_predita": 0.8647296130657196,
+      "probs": [
+        0.0029053506441414356,
+        0.2647300362586975,
+        0.7323645949363708
+      ],
+      "score_bloco": 0.8297094419598579,
+      "score_sentenca": 0.810700772650307,
+      "classes_frases": [
+        "Positivo",
+        "Positivo",
+        "Neutro"
+      ]
+    },
+    {
+      "estrato": "A_responsavel",
+      "termo": "desenho animado infantil",
+      "posicao": 8,
+      "titulo": "Brincando com Hophop, a coruja, e o pinguinzinho! Desenho animado infantil em português",
+      "classe": "Neutro",
+      "confianca": 0.9442185163497925,
+      "adequacao_predita": 0.5272494554519653,
+      "probs": [
+        0.0006412210641428828,
+        0.9442185163497925,
+        0.05514019727706909
+      ],
+      "score_bloco": 0.7790874183177947,
+      "score_sentenca": 0.7849025793519103,
+      "classes_frases": [
+        "Neutro",
+        "Neutro",
+        "Neutro"
+      ]
+    },
+    {
+      "estrato": "A_responsavel",
+      "termo": "desenho animado infantil",
+      "posicao": 9,
+      "titulo": "Mundo de Papelão | Detetive Labrador | Desenhos Animados | Desenhos Infantis | BabyBus Português",
+      "classe": "Neutro",
+      "confianca": 0.9945901036262512,
+      "adequacao_predita": 0.5020005428232253,
+      "probs": [
+        0.0007043282967060804,
+        0.9945901036262512,
+        0.004705491010099649
+      ],
+      "score_bloco": 0.7753000814234837,
+      "score_sentenca": 0.7933680953341536,
+      "classes_frases": [
+        "Neutro",
+        "Neutro",
+        "Positivo"
+      ]
+    },
+    {
+      "estrato": "A_responsavel",
+      "termo": "desenho animado infantil",
+      "posicao": 10,
+      "titulo": "O Teste da Amizade 🔍✅ Coleção de desenhos animados",
+      "classe": "Neutro",
+      "confianca": 0.6337218284606934,
+      "adequacao_predita": 0.6824169754981995,
+      "probs": [
+        0.0007221450214274228,
+        0.6337218284606934,
+        0.3655560612678528
+      ],
+      "score_bloco": 0.8023625463247299,
+      "score_sentenca": 0.5905302282808407,
+      "classes_frases": [
+        "Positivo",
+        "Neutro",
+        "Negativo"
+      ]
+    },
+    {
+      "estrato": "A_responsavel",
+      "termo": "vídeo educativo para crianças",
+      "posicao": 1,
+      "titulo": "Aeiou - Animaguel | Atividades com as vogais | Vídeo educativo (Música infantil)",
+      "classe": "Neutro",
+      "confianca": 0.9959850311279297,
+      "adequacao_predita": 0.5013408306986094,
+      "probs": [
+        0.0006666571134701371,
+        0.9959850311279297,
+        0.0033483151346445084
+      ],
+      "score_bloco": 0.7752011246047914,
+      "score_sentenca": 0.7672340474149677,
+      "classes_frases": [
+        "Neutro",
+        "Neutro",
+        "Neutro"
+      ]
+    },
+    {
+      "estrato": "A_responsavel",
+      "termo": "vídeo educativo para crianças",
+      "posicao": 2,
+      "titulo": "De Onde Vem a Onda?",
+      "classe": "Neutro",
+      "confianca": 0.9548414349555969,
+      "adequacao_predita": 0.49576955661177635,
+      "probs": [
+        0.0268098171800375,
+        0.9548414349555969,
+        0.01834883913397789
+      ],
+      "score_bloco": 0.7743654334917665,
+      "score_sentenca": 0.5626605073610941,
+      "classes_frases": [
+        "Neutro",
+        "Neutro",
+        "Negativo"
+      ]
+    },
+    {
+      "estrato": "A_responsavel",
+      "termo": "vídeo educativo para crianças",
+      "posicao": 3,
+      "titulo": "As 5 melhores músicas infantis! Cante com Léo, o caminhão curioso! Desenho animado para crianças",
+      "classe": "Positivo",
+      "confianca": 0.9875651597976685,
+      "adequacao_predita": 0.9935795501805842,
+      "probs": [
+        0.00040604741661809385,
+        0.01202878076583147,
+        0.9875651597976685
+      ],
+      "score_bloco": 0.8490369325270876,
+      "score_sentenca": 0.8048747014603578,
+      "classes_frases": [
+        "Neutro",
+        "Positivo",
+        "Neutro"
+      ]
+    },
+    {
+      "estrato": "A_responsavel",
+      "termo": "vídeo educativo para crianças",
+      "posicao": 4,
+      "titulo": "Jac Jacaré | Escova, escova [Clipe Infantil]",
+      "classe": "Positivo",
+      "confianca": 0.7825363278388977,
+      "adequacao_predita": 0.8902488350868225,
+      "probs": [
+        0.0020386534743010998,
+        0.2154250144958496,
+        0.7825363278388977
+      ],
+      "score_bloco": 0.8335373252630234,
+      "score_sentenca": 0.7985052630247083,
+      "classes_frases": [
+        "Neutro",
+        "Neutro",
+        "Positivo"
+      ]
+    },
+    {
+      "estrato": "A_responsavel",
+      "termo": "vídeo educativo para crianças",
+      "posicao": 5,
+      "titulo": "Aprenda ADIÇÃO e SUBTRAÇÃO | Episódios Completos | Numberblocks em português Brasil",
+      "classe": "Neutro",
+      "confianca": 0.9938557744026184,
+      "adequacao_predita": 0.5009372197091579,
+      "probs": [
+        0.002134981332346797,
+        0.9938557744026184,
+        0.00400933250784874
+      ],
+      "score_bloco": 0.7751405829563737,
+      "score_sentenca": 0.7655991341627667,
+      "classes_frases": [
+        "Neutro",
+        "Neutro",
+        "Neutro"
+      ]
+    },
+    {
+      "estrato": "A_responsavel",
+      "termo": "vídeo educativo para crianças",
+      "posicao": 6,
+      "titulo": "AO VIVO🔴: Episódios Completos | Bluey",
+      "classe": "Neutro",
+      "confianca": 0.7629495859146118,
+      "adequacao_predita": 0.617589920759201,
+      "probs": [
+        0.0009353096829727292,
+        0.7629495859146118,
+        0.23611512780189514
+      ],
+      "score_bloco": 0.7926384881138802,
+      "score_sentenca": 0.5773939302191138,
+      "classes_frases": [
+        "Negativo",
+        "Neutro",
+        "Neutro"
+      ]
+    },
+    {
+      "estrato": "A_responsavel",
+      "termo": "vídeo educativo para crianças",
+      "posicao": 7,
+      "titulo": "Admita Seu Erro e Não Minta | Nossos Sentimentos | Vídeo Educativo | BabyBus Português",
+      "classe": "Positivo",
+      "confianca": 0.5797809362411499,
+      "adequacao_predita": 0.7890855073928833,
+      "probs": [
+        0.00160990993026644,
+        0.4186091423034668,
+        0.5797809362411499
+      ],
+      "score_bloco": 0.8183628261089324,
+      "score_sentenca": 0.8267148376355181,
+      "classes_frases": [
+        "Neutro",
+        "Positivo",
+        "Positivo"
+      ]
+    },
+    {
+      "estrato": "A_responsavel",
+      "termo": "vídeo educativo para crianças",
+      "posicao": 8,
+      "titulo": "Blippi Português Afunda ou Flutua | Vídeos de ciência para crianças | Vídeos Educativos",
+      "classe": "Neutro",
+      "confianca": 0.8984915018081665,
+      "adequacao_predita": 0.5499643459916115,
+      "probs": [
+        0.0007898855837993324,
+        0.8984915018081665,
+        0.10071859508752823
+      ],
+      "score_bloco": 0.7824946518987417,
+      "score_sentenca": 0.8188413521274924,
+      "classes_frases": [
+        "Neutro",
+        "Positivo",
+        "Positivo"
+      ]
+    },
+    {
+      "estrato": "A_responsavel",
+      "termo": "vídeo educativo para crianças",
+      "posicao": 9,
+      "titulo": "Desenho Infantil Totoy | 53 Minutos de Historinhas do José Totoy!!! Em Português Completo",
+      "classe": "Positivo",
+      "confianca": 0.8532652854919434,
+      "adequacao_predita": 0.9263102263212204,
+      "probs": [
+        0.0006448255153372884,
+        0.14608988165855408,
+        0.8532652854919434
+      ],
+      "score_bloco": 0.838946533948183,
+      "score_sentenca": 0.8087110803317046,
+      "classes_frases": [
+        "Neutro",
+        "Positivo",
+        "Neutro"
+      ]
+    },
+    {
+      "estrato": "A_responsavel",
+      "termo": "vídeo educativo para crianças",
+      "posicao": 10,
+      "titulo": "MARATONA DO MEIO AMBIENTE ♻️ O Show da Luna!",
+      "classe": "Positivo",
+      "confianca": 0.8923290371894836,
+      "adequacao_predita": 0.945965588092804,
+      "probs": [
+        0.00039785337867215276,
+        0.10727310180664062,
+        0.8923290371894836
+      ],
+      "score_bloco": 0.8418948382139205,
+      "score_sentenca": 0.8155740371206776,
+      "classes_frases": [
+        "Neutro",
+        "Positivo",
+        "Positivo"
+      ]
+    },
+    {
+      "estrato": "B_apelo_infantil",
+      "termo": "south park português dublado",
+      "posicao": 1,
+      "titulo": "30 Minutos de Risadas com a Galerinha de South Park | Pluto TV",
+      "classe": "Negativo",
+      "confianca": 0.9973443150520325,
+      "adequacao_predita": 0.001478546269936487,
+      "probs": [
+        0.9973443150520325,
+        0.0023543902207165956,
+        0.00030135115957818925
+      ],
+      "score_bloco": 0.10053113698959351,
+      "score_sentenca": 0.32535486503135563,
+      "classes_frases": [
+        "Negativo",
+        "Neutro",
+        "Negativo"
+      ]
+    },
+    {
+      "estrato": "B_apelo_infantil",
+      "termo": "south park português dublado",
+      "posicao": 2,
+      "titulo": "Scott Tenorman deve morrer",
+      "classe": "Negativo",
+      "confianca": 0.9992073774337769,
+      "adequacao_predita": 0.000503752933582291,
+      "probs": [
+        0.9992073774337769,
+        0.0005775399040430784,
+        0.0002149829815607518
+      ],
+      "score_bloco": 0.10015852451324464,
+      "score_sentenca": 0.32509336138706807,
+      "classes_frases": [
+        "Negativo",
+        "Neutro",
+        "Negativo"
+      ]
+    },
+    {
+      "estrato": "B_apelo_infantil",
+      "termo": "south park português dublado",
+      "posicao": 3,
+      "titulo": "patinetes - parte 1 - SOUTH PARK (completo)",
+      "classe": "Neutro",
+      "confianca": 0.9804537892341614,
+      "adequacao_predita": 0.5094764940440655,
+      "probs": [
+        0.0002966597967315465,
+        0.9804537892341614,
+        0.019249599426984787
+      ],
+      "score_bloco": 0.7764214741066098,
+      "score_sentenca": 0.8090361506736371,
+      "classes_frases": [
+        "Neutro",
+        "Neutro",
+        "Positivo"
+      ]
+    },
+    {
+      "estrato": "B_apelo_infantil",
+      "termo": "south park português dublado",
+      "posicao": 4,
+      "titulo": "Os Melhores Episódios de South Park | Pluto TV",
+      "classe": "Negativo",
+      "confianca": 0.9980375170707703,
+      "adequacao_predita": 0.0011097666574642062,
+      "probs": [
+        0.9980375170707703,
+        0.0017056033248081803,
+        0.00025696499506011605
+      ],
+      "score_bloco": 0.10039249658584595,
+      "score_sentenca": 0.3614018089448412,
+      "classes_frases": [
+        "Neutro",
+        "Negativo",
+        "Negativo"
+      ]
+    },
+    {
+      "estrato": "B_apelo_infantil",
+      "termo": "south park português dublado",
+      "posicao": 5,
+      "titulo": "SOUTH PARK - EPISÓDIO - CARTMAN ENCONTRA O AMOR - PARTE 1",
+      "classe": "Neutro",
+      "confianca": 0.4720064103603363,
+      "adequacao_predita": 0.329253189265728,
+      "probs": [
+        0.43474358320236206,
+        0.4720064103603363,
+        0.09324998408555984
+      ],
+      "score_bloco": 0.7493879783898592,
+      "score_sentenca": 0.8080591420817654,
+      "classes_frases": [
+        "Neutro",
+        "Positivo",
+        "Positivo"
+      ]
+    },
+    {
+      "estrato": "B_apelo_infantil",
+      "termo": "south park português dublado",
+      "posicao": 6,
+      "titulo": "Cartman machista opressor - SOUTH PARK",
+      "classe": "Negativo",
+      "confianca": 0.9988669157028198,
+      "adequacao_predita": 0.0007179398089647293,
+      "probs": [
+        0.9988669157028198,
+        0.0008302448550239205,
+        0.00030281738145276904
+      ],
+      "score_bloco": 0.10022661685943604,
+      "score_sentenca": 0.3310783550143242,
+      "classes_frases": [
+        "Negativo",
+        "Negativo",
+        "Positivo"
+      ]
+    },
+    {
+      "estrato": "B_apelo_infantil",
+      "termo": "south park português dublado",
+      "posicao": 7,
+      "titulo": "DESENHO PARA ASSISTIR CHAPADO - ASSISTA CHAPADO - SOUTH PARK",
+      "classe": "Negativo",
+      "confianca": 0.9855614900588989,
+      "adequacao_predita": 0.007367799349594861,
+      "probs": [
+        0.9855614900588989,
+        0.014141443185508251,
+        0.0002970777568407357
+      ],
+      "score_bloco": 0.10288770198822023,
+      "score_sentenca": 0.5417271106261371,
+      "classes_frases": [
+        "Neutro",
+        "Neutro",
+        "Negativo"
+      ]
+    },
+    {
+      "estrato": "B_apelo_infantil",
+      "termo": "south park português dublado",
+      "posicao": 8,
+      "titulo": "30 Minutos de South Park | Pluto TV",
+      "classe": "Neutro",
+      "confianca": 0.9892450571060181,
+      "adequacao_predita": 0.49951918330043554,
+      "probs": [
+        0.005858265794813633,
+        0.9892450571060181,
+        0.00489665474742651
+      ],
+      "score_bloco": 0.7749278774950653,
+      "score_sentenca": 0.7920095269029842,
+      "classes_frases": [
+        "Positivo",
+        "Neutro",
+        "Neutro"
+      ]
+    },
+    {
+      "estrato": "B_apelo_infantil",
+      "termo": "south park português dublado",
+      "posicao": 9,
+      "titulo": "South Park: A Fenda que Abunda a Força - O Filme (Dublado)",
+      "classe": "Negativo",
+      "confianca": 0.6357815265655518,
+      "adequacao_predita": 0.2521400675177574,
+      "probs": [
+        0.6357815265655518,
+        0.22415678203105927,
+        0.14006167650222778
+      ],
+      "score_bloco": 0.17284369468688965,
+      "score_sentenca": 0.569352804372708,
+      "classes_frases": [
+        "Positivo",
+        "Negativo",
+        "Neutro"
+      ]
+    },
+    {
+      "estrato": "B_apelo_infantil",
+      "termo": "south park português dublado",
+      "posicao": 10,
+      "titulo": "30 MINUTOS das MAIORES MALDADES do Cartman | South Park | Pluto TV",
+      "classe": "Negativo",
+      "confianca": 0.9990965127944946,
+      "adequacao_predita": 0.0005825194530189037,
+      "probs": [
+        0.9990965127944946,
+        0.000642032187897712,
+        0.00026150335907004774
+      ],
+      "score_bloco": 0.10018069744110109,
+      "score_sentenca": 0.3500084197808368,
+      "classes_frases": [
+        "Negativo",
+        "Positivo",
+        "Negativo"
+      ]
+    },
+    {
+      "estrato": "B_apelo_infantil",
+      "termo": "rick and morty engraçado",
+      "posicao": 1,
+      "titulo": "Sobrevivendo aos Piores Predadores do Universo | Rick and Morty Brasil | adult swim",
+      "classe": "Negativo",
+      "confianca": 0.9803123474121094,
+      "adequacao_predita": 0.010020179732237011,
+      "probs": [
+        0.9803123474121094,
+        0.019334888085722923,
+        0.00035273568937554955
+      ],
+      "score_bloco": 0.10393753051757813,
+      "score_sentenca": 0.3486422852710045,
+      "classes_frases": [
+        "Negativo",
+        "Negativo",
+        "Neutro"
+      ]
+    },
+    {
+      "estrato": "B_apelo_infantil",
+      "termo": "rick and morty engraçado",
+      "posicao": 2,
+      "titulo": "A experiência amorosa | Rick & Morty | Adult Swim Brasil",
+      "classe": "Neutro",
+      "confianca": 0.9841251373291016,
+      "adequacao_predita": 0.4995173504576087,
+      "probs": [
+        0.008420100435614586,
+        0.9841251373291016,
+        0.0074547817930579185
+      ],
+      "score_bloco": 0.7749276025686412,
+      "score_sentenca": 0.8026462092995642,
+      "classes_frases": [
+        "Positivo",
+        "Neutro",
+        "Neutro"
+      ]
+    },
+    {
+      "estrato": "B_apelo_infantil",
+      "termo": "rick and morty engraçado",
+      "posicao": 3,
+      "titulo": "Rick e Morty: tudo por uma selfie | Rick & Morty | Adult Swim Brasil",
+      "classe": "Negativo",
+      "confianca": 0.8211053013801575,
+      "adequacao_predita": 0.09170950995758176,
+      "probs": [
+        0.8211053013801575,
+        0.17437045276165009,
+        0.004524283576756716
+      ],
+      "score_bloco": 0.1357789397239685,
+      "score_sentenca": 0.5518405618679632,
+      "classes_frases": [
+        "Negativo",
+        "Positivo",
+        "Neutro"
+      ]
+    },
+    {
+      "estrato": "B_apelo_infantil",
+      "termo": "rick and morty engraçado",
+      "posicao": 4,
+      "titulo": "Rick And Morty Dublado - Completo",
+      "classe": "Negativo",
+      "confianca": 0.999336838722229,
+      "adequacao_predita": 0.0004634374927263707,
+      "probs": [
+        0.999336838722229,
+        0.00039947329787537456,
+        0.0002637008437886834
+      ],
+      "score_bloco": 0.1001326322555542,
+      "score_sentenca": 0.554730733022249,
+      "classes_frases": [
+        "Negativo",
+        "Neutro",
+        "Neutro"
+      ]
+    },
+    {
+      "estrato": "B_apelo_infantil",
+      "termo": "rick and morty engraçado",
+      "posicao": 5,
+      "titulo": "O problema com os problemas | Rick & Morty | Adult Swim Brasil",
+      "classe": "Neutro",
+      "confianca": 0.5198985934257507,
+      "adequacao_predita": 0.270686780102551,
+      "probs": [
+        0.4693639874458313,
+        0.5198985934257507,
+        0.010737483389675617
+      ],
+      "score_bloco": 0.7406030170153826,
+      "score_sentenca": 0.5544534138093392,
+      "classes_frases": [
+        "Neutro",
+        "Negativo",
+        "Positivo"
+      ]
+    },
+    {
+      "estrato": "B_apelo_infantil",
+      "termo": "rick and morty engraçado",
+      "posicao": 6,
+      "titulo": "Vô fazê sá porra!!!",
+      "classe": "Negativo",
+      "confianca": 0.9994576573371887,
+      "adequacao_predita": 0.0003980368928750977,
+      "probs": [
+        0.9994576573371887,
+        0.00028871986432932317,
+        0.0002536769607104361
+      ],
+      "score_bloco": 0.10010846853256226,
+      "score_sentenca": 0.3250556984576784,
+      "classes_frases": [
+        "Neutro",
+        "Negativo",
+        "Negativo"
+      ]
+    },
+    {
+      "estrato": "B_apelo_infantil",
+      "termo": "rick and morty engraçado",
+      "posicao": 7,
+      "titulo": "Rick Chapa Com Dragão Rick And Morty Dublado",
+      "classe": "Negativo",
+      "confianca": 0.9993849992752075,
+      "adequacao_predita": 0.0004277425177861005,
+      "probs": [
+        0.9993849992752075,
+        0.000374451803509146,
+        0.00024051661603152752
+      ],
+      "score_bloco": 0.10012300014495851,
+      "score_sentenca": 0.33501185874144235,
+      "classes_frases": [
+        "Neutro",
+        "Negativo",
+        "Negativo"
+      ]
+    },
+    {
+      "estrato": "B_apelo_infantil",
+      "termo": "rick and morty engraçado",
+      "posicao": 8,
+      "titulo": "Os melhores momentos de suspense da 1ª temporada | Rick and Morty | Adult Swim",
+      "classe": "Neutro",
+      "confianca": 0.8505412936210632,
+      "adequacao_predita": 0.5724533945322037,
+      "probs": [
+        0.0022759127896279097,
+        0.8505412936210632,
+        0.14718274772167206
+      ],
+      "score_bloco": 0.7858680091798305,
+      "score_sentenca": 0.7922620214521885,
+      "classes_frases": [
+        "Neutro",
+        "Neutro",
+        "Neutro"
+      ]
+    },
+    {
+      "estrato": "B_apelo_infantil",
+      "termo": "rick and morty engraçado",
+      "posicao": 9,
+      "titulo": "Parasitas invasores | Rick & Morty | Adult Swim Brasil",
+      "classe": "Negativo",
+      "confianca": 0.9927899241447449,
+      "adequacao_predita": 0.0037754841323476285,
+      "probs": [
+        0.9927899241447449,
+        0.006869071163237095,
+        0.00034094855072908103
+      ],
+      "score_bloco": 0.10144201517105103,
+      "score_sentenca": 0.5556819964161454,
+      "classes_frases": [
+        "Negativo",
+        "Neutro",
+        "Neutro"
+      ]
+    },
+    {
+      "estrato": "B_apelo_infantil",
+      "termo": "rick and morty engraçado",
+      "posicao": 10,
+      "titulo": "🔴 Rick and Morty Brasil: Clipes das Temps. 1-3 | Melhores Momentos | Ao Vivo",
+      "classe": "Negativo",
+      "confianca": 0.9979068040847778,
+      "adequacao_predita": 0.0011572444345802069,
+      "probs": [
+        0.9979068040847778,
+        0.001872059889137745,
+        0.00022121449001133442
+      ],
+      "score_bloco": 0.10041863918304444,
+      "score_sentenca": 0.5696070513377587,
+      "classes_frases": [
+        "Positivo",
+        "Neutro",
+        "Negativo"
+      ]
+    }
+  ]
+}
